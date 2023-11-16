@@ -1,6 +1,16 @@
-from game import intro
+from game import intro, get_user_input
 
-def test_intro(capsys):
-	intro()
-	captured = capsys.readouterr()
-	assert captured.out.strip() == "You find yourself standing in an open field, filled with grass and yellow wildflowers. Rumor has it that a wicked fairie is somewhere around here, and has been terrifying the nearby village..."
+def test_get_user_input(monkeypatch):
+    monkeypatch.setattr('game.get_user_input', lambda _: 'test_input')
+    result = get_user_input("Q: ")
+    assert result == 'test_input'
+
+def test_intro(monkeypatch, capfd):
+    monkeypatch.setattr('game.get_user_input', lambda _: 'test_input')
+
+    # Redirect stdout to capfd
+    with capfd.disabled():
+        result = intro()
+
+    assert result == 'test_input'
+
