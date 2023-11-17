@@ -1,3 +1,5 @@
+import time
+
 def get_user_input(prompt) -> str:
     """Capture user input"""
     return input(prompt)
@@ -10,5 +12,8 @@ def second_action() -> str:
     """Print second action and collect user input"""
     return get_user_input("Second: ")
 
-print(intro())
-print(second_action())
+def pause() -> int:
+    return time.sleep(2)
+
+#print(intro())
+#print(second_action())

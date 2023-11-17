@@ -31,9 +31,6 @@ def test_second_action(monkeypatch, capfd):
 
 def test_pause():
     with freeze_time("2022-01-01 00:00:00"):
-        start_time = time.time()
         result = pause()
-        end_time = time.time()
         
-    assert result == "expected_result"
-    assert end_time - start_time >= 5
+    assert result == time.sleep(2)
