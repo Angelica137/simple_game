@@ -17,9 +17,10 @@ def pause() -> int:
 
 
 def long_story() -> str:
+    print("this is some long copy")
     pause()
-    paragraph = "this is some long copy"
-    return paragraph
+    print("this is another looooong thing")
+    pause()
 
 '''
 print(long_story())

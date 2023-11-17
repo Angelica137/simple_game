@@ -1,6 +1,7 @@
-import time
 from game import *
 from freezegun import freeze_time
+from io import StringIO
+from contextlib import redirect_stdout
 
 def test_get_user_input(monkeypatch):
     monkeypatch.setattr('game.get_user_input', lambda _: 'test_input')
@@ -35,7 +36,19 @@ def test_pause():
         
     assert result == time.sleep(2)
     
-
+'''
 def test_long_story():
     result = long_story()
     assert result == "this is some long copy"
+'''
+
+def test_long_story():
+    with StringIO() as captured_output:
+        with redirect_stdout(captured_output):
+            long_story()
+            
+        output_lines = captured_output.getvalue().strip().split('\n')
+        
+    assert len(output_lines) == 2
+    assert "this is some long copy" in output_lines[0]
+    assert "this is another looooong thing" in output_lines[1]
