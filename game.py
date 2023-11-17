@@ -15,5 +15,11 @@ def second_action() -> str:
 def pause() -> int:
     return time.sleep(2)
 
+
+def long_story() -> str:
+    pause()
+    paragraph = "this is some long copy"
+    return paragraph
+
 #print(intro())
 #print(second_action())

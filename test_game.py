@@ -34,3 +34,8 @@ def test_pause():
         result = pause()
         
     assert result == time.sleep(2)
+    
+
+def test_long_story():
+    result = long_story()
+    assert result == "this is some long copy"
