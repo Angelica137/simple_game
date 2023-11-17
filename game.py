@@ -8,19 +8,22 @@ def intro() -> str:
     """Print intro statement and collect user input"""
     return get_user_input("Welcome, player 1. What is your name?: ")
 
-def second_action() -> str:
-    """Print second action and collect user input"""
-    return get_user_input("Second: ")
-
 def pause() -> int:
     return time.sleep(2)
 
 
 def long_story() -> str:
-    print("this is some long copy")
+    print("You are in the middle of an enchanted forest where your parents left you with some bread")
     pause()
-    print("this is another looooong thing")
+    print("After walking for a while you come across a cabin made of ginger bread and candy.")
     pause()
+    print("You are suspicious, but you are also tired and hungry.")
+    pause()
+    
+
+def first_action() -> str:
+    """Print first action and collect user input"""
+    return get_user_input("What do you do do? \n Enter 1 to knock on the door. \nEnter 2 to pick what ever you can grab.")
 
 '''
 print(long_story())
