@@ -4,30 +4,30 @@ from io import StringIO
 from contextlib import redirect_stdout
 
 def test_get_user_input(monkeypatch):
-    monkeypatch.setattr('game.get_user_input', lambda _: 'test_input')
+    monkeypatch.setattr('game.get_user_input', lambda _: 'Ana')
     result = get_user_input("Welcome, player 1. What is your name?: ")
-    assert result == 'test_input'
+    assert result == 'Ana'
 
 def test_intro(monkeypatch, capfd):
-    monkeypatch.setattr('game.get_user_input', lambda _: 'test_input')
+    monkeypatch.setattr('game.get_user_input', lambda _: 'Ana')
 
     # Redirect stdout to capfd
     with capfd.disabled():
         result = intro()
 
-    assert result == 'test_input'
+    assert result == 'Ana'
 
 def test_get_user_input_2(monkeypatch):
-    monkeypatch.setattr('game.get_user_input', lambda _: 'second')
+    monkeypatch.setattr('game.get_user_input', lambda _: 1)
     result = get_user_input("Second: ")
-    assert result == 'second'
+    assert result == '1'
 
 def test_second_action(monkeypatch, capfd):
-    monkeypatch.setattr('game.get_user_input', lambda _: 'second')
+    monkeypatch.setattr('game.get_user_input', lambda _: 1)
     with capfd.disabled():
         result = second_action()
         
-    assert result == 'second'
+    assert result == 1
     
 
 def test_pause():
