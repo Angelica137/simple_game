@@ -4,7 +4,7 @@ from freezegun import freeze_time
 
 def test_get_user_input(monkeypatch):
     monkeypatch.setattr('game.get_user_input', lambda _: 'test_input')
-    result = get_user_input("Q: ")
+    result = get_user_input("Welcome, player 1. What is your name?: ")
     assert result == 'test_input'
 
 def test_intro(monkeypatch, capfd):

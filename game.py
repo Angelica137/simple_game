@@ -6,7 +6,7 @@ def get_user_input(prompt) -> str:
 
 def intro() -> str:
     """Print intro statement and collect user input"""
-    return get_user_input("Q: ")
+    return get_user_input("Welcome, player 1. What is your name?: ")
 
 def second_action() -> str:
     """Print second action and collect user input"""
@@ -21,5 +21,9 @@ def long_story() -> str:
     paragraph = "this is some long copy"
     return paragraph
 
-#print(intro())
-#print(second_action())
+'''
+print(long_story())
+print(long_story())
+print(intro())
+print(second_action())
+'''
