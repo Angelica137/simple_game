@@ -7,7 +7,7 @@ def get_user_input(prompt) -> str:
 
 def intro() -> str:
     """Print intro statement and collect user input"""
-    return get_user_input("Welcome, player 1. What is your name?: ")
+    return get_user_input("Welcome, player 1. What is your name? ")
 
 
 def pause() -> int:
@@ -20,16 +20,17 @@ def long_story() -> str:
     print("After walking for a while you come across a cabin made of ginger bread and candy.")
     pause()
     print("You are suspicious, but you are also tired and hungry.")
-    return pause()
+    pause()
+    return "What do you do?"
 
 
 def first_action() -> str:
     """Print first action and collect user input"""
-    return get_user_input("What do you do do? \n Enter 1 to knock on the door. \nEnter 2 to pick whatever you can grab.")
+    pause()
+    return get_user_input("Enter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.")
 
 
-'''
+
 print(intro())
 print(long_story())
 print(first_action())
-'''
