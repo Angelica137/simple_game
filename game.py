@@ -10,3 +10,5 @@ def second_action() -> str:
     """Print second action and collect user input"""
     return get_user_input("Second: ")
 
+print(intro())
+print(second_action())
