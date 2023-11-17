@@ -20,7 +20,7 @@ def long_story() -> str:
     print("After walking for a while you come across a cabin made of ginger bread and candy.")
     pause()
     print("You are suspicious, but you are also tired and hungry.")
-    pause()
+    return pause()
 
 
 def first_action() -> str:
@@ -29,8 +29,7 @@ def first_action() -> str:
 
 
 '''
-print(long_story())
-print(long_story())
 print(intro())
-print(second_action())
+print(long_story())
+print(first_action())
 '''
