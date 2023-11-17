@@ -5,7 +5,7 @@ from contextlib import redirect_stdout
 
 def test_get_user_input(monkeypatch):
     monkeypatch.setattr('game.get_user_input', lambda _: 'Ana')
-    result = get_user_input("Welcome, player 1. What is your name?: ")
+    result = get_user_input("Welcome, player 1. What is your name? ")
     assert result == 'Ana'
 
 
@@ -47,3 +47,8 @@ def test_first_action(monkeypatch, capfd):
     with capfd.disabled():
         result = first_action()        
     assert result == 1
+    
+
+def test_knock_knock():
+    result = knock_knock()
+    assert result == "A young man opens the door."
