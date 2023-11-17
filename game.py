@@ -5,4 +5,4 @@ def intro() -> str:
     return get_user_input("Q: ")
 
 
-print(intro())
+

@@ -1,4 +1,4 @@
-from game import intro, get_user_input
+from game import *
 
 def test_get_user_input(monkeypatch):
     monkeypatch.setattr('game.get_user_input', lambda _: 'test_input')
