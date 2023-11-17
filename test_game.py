@@ -14,10 +14,13 @@ def test_intro(monkeypatch, capfd):
 
     assert result == 'test_input'
 
+def test_get_user_input_2(monkeypatch):
+    monkeypatch.setattr('game.get_user_input', lambda _: 'second')
+    result = get_user_input("Second: ")
+    assert result == 'second'
 
 def test_second_action(monkeypatch, capfd):
     monkeypatch.setattr('game.get_user_input', lambda _: 'second')
-    result = get_user_input("Q: ")
     with capfd.disabled():
         result = second_action()
         
