@@ -30,6 +30,12 @@ def first_action() -> str:
     return get_user_input("Enter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.")
 
 
+
+def knock_knock() -> str:
+    return "A young man opens the door."
+
+
+
 '''
 print(intro())
 print(long_story())

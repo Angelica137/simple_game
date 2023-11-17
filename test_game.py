@@ -50,5 +50,5 @@ def test_first_action(monkeypatch, capfd):
     
 
 def test_knock_knock():
-    result = knock_knock()
+    result = knock_knock(first_action)
     assert result == "A young man opens the door."
