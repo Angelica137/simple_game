@@ -32,7 +32,9 @@ def first_action() -> str:
 
 
 def knock_knock() -> str:
-    return "A young man opens the door."
+    path = first_action()
+    if path == '1':
+        return "A young man opens the door."
 
 
 
