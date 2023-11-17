@@ -25,7 +25,7 @@ def long_story() -> str:
 
 def first_action() -> str:
     """Print first action and collect user input"""
-    return get_user_input("What do you do do? \n Enter 1 to knock on the door. \nEnter 2 to pick what ever you can grab.")
+    return get_user_input("What do you do do? \n Enter 1 to knock on the door. \nEnter 2 to pick whatever you can grab.")
 
 
 '''
