@@ -46,19 +46,19 @@ def test_first_action_user_input_1():
 
 def test_first_crossroad_path_1():
     with patch("game.first_action", side_effect="1"):
-        result = first_crossroad()
+        result = forest_cabin()
     assert result == "A young man opens the door."
 
 
 def test_first_crossroad_path_2():
     with patch("game.first_action", side_effect="2"):
-        result = first_crossroad()
+        result = forest_cabin()
     assert result == "You go into stealth mode and move around the property towards the neares candy bush."
 
 
 def test_first_crossroad_path_other():
     with patch("game.first_action", side_effect=["4", "2"]):
-        result = first_crossroad()
+        result = forest_cabin()
     assert result == "You go into stealth mode and move around the property towards the neares candy bush."
 
 

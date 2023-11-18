@@ -32,7 +32,7 @@ def first_action() -> str:
     return get_user_input("Enter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.\n")
 
 
-def first_crossroad() -> str:
+def forest_cabin() -> str:
     """Collects user action from first action and moves on to next action"""
     while True:
         path = first_action()
