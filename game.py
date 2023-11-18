@@ -1,13 +1,13 @@
 import time
 
-def get_user_input(prompt) -> str:
+def get_user_input(prompt: str) -> str:
     """Capture user input"""
     return input(prompt)
 
 
 def intro() -> str:
     """Print intro statement and collect user input"""
-    return get_user_input("Welcome, player 1. What is your name? ")
+    return get_user_input("Welcome, player 1. What is your name?\n")
 
 
 def pause() -> int:
@@ -42,9 +42,8 @@ def knock_knock() -> str:
 
 
 
-'''
-print(intro())
-print(long_story())
-print(knock_knock())
-'''
+#print(intro())
+#print(long_story())
+#print(knock_knock())
+
 
