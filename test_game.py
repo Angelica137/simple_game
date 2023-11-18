@@ -3,7 +3,6 @@ from freezegun import freeze_time
 from io import StringIO
 from contextlib import redirect_stdout
 from unittest.mock import patch
-import io
 
 def test_get_user_input(monkeypatch):
     monkeypatch.setattr('game.get_user_input', lambda _: 'Ana')
