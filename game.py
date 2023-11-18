@@ -34,6 +34,8 @@ def knock_knock() -> str:
     path = first_action()
     if path == '1':
         return "A young man opens the door."
+    if path == '2':
+        return "You go into stealth mode and move around the property towards the neares candy bush."
 
 
 
