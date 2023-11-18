@@ -66,7 +66,6 @@ def test_cabin_knock(monkeypatch):
     """Test the user gets a result from the list of possible results.
         this test is deterministic."""
     monkeypatch.setattr(random, 'choice', lambda seq: seq[0])
-    knock_outcomes = [1, 2, 3, 4]
-    result = cabin_knock(knock_outcomes)
+    result = cabin_knock()
     assert result == 1
 

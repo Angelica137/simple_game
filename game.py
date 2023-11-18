@@ -1,4 +1,4 @@
-import time
+import time, random
 
 def get_user_input(prompt: str) -> str:
     """Capture user input"""
@@ -42,6 +42,10 @@ def first_crossroad() -> str:
             return "You go into stealth mode and move around the property towards the neares candy bush."
 
 
+def cabin_knock() -> str:
+    knock_outcomes = [1, 2, 3, 4]
+    return random.choice(knock_outcomes)
+    
 
 '''
 print(intro())
