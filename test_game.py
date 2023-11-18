@@ -42,13 +42,7 @@ def test_first_action_user_input_1():
     with patch("builtins.input", side_effect=["1"]):
         result = first_action()
     assert result == "1"
-
-'''
-def test_forest_cabin_path_1():
-    with patch("game.first_action", side_effect=["1"]):
-        result = forest_cabin()
-    assert result == "A young man opens the door."
-'''
+    
 
 def test_forest_cabin_path_2():
     with patch("game.first_action", side_effect=["2"]):
