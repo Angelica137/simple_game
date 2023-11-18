@@ -32,18 +32,17 @@ def first_action() -> str:
 
 
 def knock_knock() -> str:
-    path = first_action()
-    if path == '1':
-        return "A young man opens the door."
-    if path == '2':
-        return "You go into stealth mode and move around the property towards the neares candy bush."
-    else:
-        return first_action()
+    while True:
+        path = first_action()
+        if path == '1':
+            return "A young man opens the door."
+        if path == '2':
+            return "You go into stealth mode and move around the property towards the neares candy bush."
 
 
 
 
-print(intro())
+#print(intro())
 #print(long_story())
 #print(knock_knock())
 

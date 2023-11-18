@@ -2,6 +2,8 @@ from game import *
 from freezegun import freeze_time
 from io import StringIO
 from contextlib import redirect_stdout
+from unittest.mock import patch
+import io
 
 def test_get_user_input(monkeypatch):
     monkeypatch.setattr('game.get_user_input', lambda _: 'Ana')
@@ -42,12 +44,18 @@ def test_first_action(monkeypatch, capfd):
     assert result == 1
     
 
-def test_knock_knock():
-    result = first_action()
-    if result == '1':
-        assert knock_knock() == "A young man opens the door."
-    if result == '2':
-        assert knock_knock() == "You go into stealth mode and move around the property towards the neares candy bush."
-    else:
-        assert knock_knock() == first_action()
+def test_first_action_user_input_1():
+    with patch("builtins.input", side_effect=["1"]):
+        result = first_action()
+    assert result == "1"
+    
+
+
+def test_knock_knock_path_1():
+    with patch("game.first_action", return_value="1"):
+        result = knock_knock()
+    assert result == "A young man opens the door."
+
+
+
 
