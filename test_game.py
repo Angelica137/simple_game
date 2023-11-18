@@ -43,27 +43,20 @@ def test_first_action_user_input_1():
         result = first_action()
     assert result == "1"
 
-'''
-def test_first_action_user_input_2():
-    """test user input from fisrt action is captured value 2"""
-    with patch("builtins.input", side_effect=["2"]):
-        result = first_action()
-    assert result == "2"
-'''
 
-def test_knock_knock_path_1():
+def test_first_crossroad_path_1():
     with patch("game.first_action", side_effect="1"):
-        result = knock_knock()
+        result = first_crossroad()
     assert result == "A young man opens the door."
 
 
-def test_knock_knock_path_2():
+def test_first_crossroad_path_2():
     with patch("game.first_action", side_effect="2"):
-        result = knock_knock()
+        result = first_crossroad()
     assert result == "You go into stealth mode and move around the property towards the neares candy bush."
 
 
-def test_knock_knock_path_other():
+def test_first_crossroad_path_other():
     with patch("game.first_action", side_effect=["4", "2"]):
-        result = knock_knock()
+        result = first_crossroad()
     assert result == "You go into stealth mode and move around the property towards the neares candy bush."

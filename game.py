@@ -16,6 +16,7 @@ def pause() -> int:
 
 
 def long_story() -> str:
+    """Print the intro the game"""
     print("You are in the middle of an enchanted forest where your parents left you with some bread")
     pause()
     print("After walking for a while you come across a cabin made of ginger bread and candy.")
@@ -31,7 +32,8 @@ def first_action() -> str:
     return get_user_input("Enter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.\n")
 
 
-def knock_knock() -> str:
+def first_crossroad() -> str:
+    """Collects user action from first action and moves on to next action"""
     while True:
         path = first_action()
         if path == '1':
@@ -41,9 +43,9 @@ def knock_knock() -> str:
 
 
 
-
-#print(intro())
-#print(long_story())
-#print(knock_knock())
-
+'''
+print(intro())
+print(long_story())
+print(knock_knock())
+'''
 
