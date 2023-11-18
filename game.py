@@ -37,9 +37,9 @@ def knock_knock() -> str:
 
 
 
-'''
+
 print(intro())
 print(long_story())
 print(knock_knock())
-'''
+
 
