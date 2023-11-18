@@ -67,5 +67,5 @@ def test_cabin_knock(monkeypatch):
         this test is deterministic."""
     monkeypatch.setattr(random, 'choice', lambda seq: seq[0])
     result = cabin_knock()
-    assert result == 1
+    assert result == "A young man opens the door"
 
