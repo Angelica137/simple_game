@@ -3,6 +3,7 @@ from freezegun import freeze_time
 from io import StringIO
 from contextlib import redirect_stdout
 from unittest.mock import patch
+import random
 
 def test_get_user_input(monkeypatch):
     monkeypatch.setattr('game.get_user_input', lambda _: 'Ana')
@@ -59,3 +60,13 @@ def test_first_crossroad_path_other():
     with patch("game.first_action", side_effect=["4", "2"]):
         result = first_crossroad()
     assert result == "You go into stealth mode and move around the property towards the neares candy bush."
+
+
+def test_cabin_knock(monkeypatch):
+    """Test the user gets a result from the list of possible results.
+        this test is deterministic."""
+    monkeypatch.setattr(random, 'choice', lambda seq: seq[0])
+    knock_outcomes = [1, 2, 3, 4]
+    result = cabin_knock(knock_outcomes)
+    assert result == 1
+
