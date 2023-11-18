@@ -45,21 +45,21 @@ def test_first_action_user_input_1():
 
 
 def test_forest_cabin_path_1():
-    with patch("game.first_action", side_effect="1"):
+    with patch("game.first_action", side_effect=["1"]):
         result = forest_cabin()
     assert result == "A young man opens the door."
 
 
 def test_forest_cabin_path_2():
-    with patch("game.first_action", side_effect="2"):
+    with patch("game.first_action", side_effect=["2"]):
         result = forest_cabin()
-    assert result == "You go into stealth mode and move around the property towards the neares candy bush."
+    assert result == "You go into stealth mode and move around the property towards the nearest candy bush."
 
 
 def test_forest_cabin_path_other():
     with patch("game.first_action", side_effect=["4", "2"]):
         result = forest_cabin()
-    assert result == "You go into stealth mode and move around the property towards the neares candy bush."
+    assert result == "You go into stealth mode and move around the property towards the nearest candy bush."
 
 
 def test_cabin_knock(monkeypatch):
@@ -67,5 +67,5 @@ def test_cabin_knock(monkeypatch):
         this test is deterministic."""
     monkeypatch.setattr(random, 'choice', lambda seq: seq[0])
     result = cabin_knock()
-    assert result == "A young man opens the door"
+    assert result == "A young man opens the door."
 

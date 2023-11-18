@@ -37,23 +37,24 @@ def forest_cabin() -> str:
     while True:
         path = first_action()
         if path == '1':
-            return "A young man opens the door."
+            return cabin_knock()
         if path == '2':
-            return "You go into stealth mode and move around the property towards the neares candy bush."
+            return "You go into stealth mode and move around the property towards the nearest candy bush."
 
 
 def cabin_knock() -> str:
     knock_outcomes = [
-        "A young man opens the door", 
-        "No one answers", 
-        "A woman opens the door",
-        "You hear a voice from behind the door"]
+        "A young man opens the door.", 
+        "No one answers.", 
+        "A woman opens the door.",
+        "You hear a voice from behind the door."
+                ]
     return random.choice(knock_outcomes)
     
 
 '''
 print(intro())
 print(long_story())
-print(knock_knock())
+print(forest_cabin())
 '''
 
