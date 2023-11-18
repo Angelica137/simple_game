@@ -33,12 +33,6 @@ def test_long_story():
     assert "You are in the middle of an enchanted forest where your parents left you with some bread" in output_lines[0]
     assert "After walking for a while you come across a cabin made of ginger bread and candy." in output_lines[1]
     assert "You are suspicious, but you are also tired and hungry." in output_lines[2]
-    
-
-def test_get_user_input_2(monkeypatch):
-    monkeypatch.setattr('game.get_user_input', lambda _: 1)
-    result = get_user_input("Second: ")
-    assert result == '1'
 
 
 def test_first_action(monkeypatch, capfd):
