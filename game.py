@@ -27,8 +27,7 @@ def long_story() -> str:
 def first_action() -> str:
     """Print first action and collect user input"""
     pause()
-    return get_user_input("Enter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.")
-
+    return get_user_input("Enter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.\n")
 
 
 def knock_knock() -> str:
@@ -41,5 +40,6 @@ def knock_knock() -> str:
 '''
 print(intro())
 print(long_story())
-print(first_action())
+print(knock_knock())
 '''
+

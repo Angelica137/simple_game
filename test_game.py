@@ -17,7 +17,6 @@ def test_intro(monkeypatch, capfd):
     assert result == 'Ana'
 
 
-
 def test_pause():
     with freeze_time("2022-01-01 00:00:00"):
         result = pause()       
@@ -50,5 +49,8 @@ def test_first_action(monkeypatch, capfd):
     
 
 def test_knock_knock():
-    result = knock_knock()
-    assert result == "A young man opens the door."
+    result = first_action()
+    if result == '1':
+        assert result == "A young man opens the door."
+    else:
+        assert result == "fail"
