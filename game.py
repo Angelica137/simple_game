@@ -7,7 +7,8 @@ def get_user_input(prompt: str) -> str:
 
 def intro() -> str:
     """Print intro statement and collect user input"""
-    return get_user_input("Welcome, player 1. What is your name?\n")
+    name = get_user_input("Welcome, player 1. What is your name?\n")
+    return (f"Hi, {name}.")
 
 
 def pause() -> int:
@@ -42,7 +43,7 @@ def knock_knock() -> str:
 
 
 
-#print(intro())
+print(intro())
 #print(long_story())
 #print(knock_knock())
 

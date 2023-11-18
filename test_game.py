@@ -14,7 +14,7 @@ def test_intro(monkeypatch, capfd):
     # Redirect stdout to capfd
     with capfd.disabled():
         result = intro()
-    assert result == 'Welcome, Ana'
+    assert result == 'Hi, Ana.'
 
 
 def test_pause():
