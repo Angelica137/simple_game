@@ -48,5 +48,7 @@ def test_knock_knock():
         assert knock_knock() == "A young man opens the door."
     if result == '2':
         assert knock_knock() == "You go into stealth mode and move around the property towards the neares candy bush."
+    else:
+        assert knock_knock() == first_action()
 
 
