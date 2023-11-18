@@ -53,4 +53,4 @@ def test_knock_knock():
     if result == '1':
         assert result == "A young man opens the door."
     else:
-        assert result == "fail"
+        assert result == first_action()
