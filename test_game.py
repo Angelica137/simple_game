@@ -128,3 +128,25 @@ def test_fairy_outcomes_one():
 def test_fairy_outcomes_one_return_statement():
     result = fairy_outcomes_one()
     assert result == "GAME OVER."
+
+
+def test_fairy_outcomes_two():
+    with StringIO() as captured_output:
+        with redirect_stdout(captured_output):
+            fairy_outcomes_two()
+        output_lines = captured_output.getvalue().strip().split('\n')
+    
+    assert len(output_lines) == 8
+    assert "Hello little fairy! I did not mean to steal these from you." in output_lines[0]
+    assert "“you are not stealing from me. you are stealing from him!” She says angrily while pointing her tiny finger behind you." in output_lines[1]
+    assert "You turn around and see a large oar ready to hit you with a huge club." in output_lines[2]
+    assert "You dodge the ogre and see him image the little fairy. You grab your pockets full of candy and run for your life!" in output_lines[3]
+    assert "You run as fast as you can and before you know it you are out of the forest. There are some lumberjacks about to go in and you fall to your knees and try to tell them there is an ogre, but you are making no sense." in output_lines[4]
+    assert "You turn around nervously pointing at the forest." in output_lines[5]
+    assert "“Ogre!” finally you manage the words as the ogre makes it out of the forest finally catching up." in output_lines[6]
+    assert "The lumberjacks see him and launch an attack on the ogre leaving you on the ground with some candy still i your pockets." in output_lines[7]
+
+
+def test_fairy_outcomes_two_return_statement():
+    result = fairy_outcomes_two()
+    assert result == "YOU WIN."
