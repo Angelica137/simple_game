@@ -25,18 +25,6 @@ def test_pause():
     assert result == time.sleep(2)
     
 
-def test_long_story():
-    with StringIO() as captured_output:
-        with redirect_stdout(captured_output):
-            long_story()           
-        output_lines = captured_output.getvalue().strip().split('\n')
-        
-    assert len(output_lines) == 3
-    assert "You are in the middle of an enchanted forest where your parents left you with some bread" in output_lines[0]
-    assert "After walking for a while you come across a cabin made of ginger bread and candy." in output_lines[1]
-    assert "You are suspicious, but you are also tired and hungry." in output_lines[2]
-    
-
 def test_first_action_user_input_1():
     """test user input from fisrt action is captured"""
     with patch("builtins.input", side_effect=["1"]):

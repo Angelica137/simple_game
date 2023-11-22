@@ -15,17 +15,6 @@ def pause() -> int:
     return time.sleep(2)
 
 
-def long_story() -> str:
-    """Print the intro the game"""
-    print("You are in the middle of an enchanted forest where your parents left you with some bread")
-    pause()
-    print("After walking for a while you come across a cabin made of ginger bread and candy.")
-    pause()
-    print("You are suspicious, but you are also tired and hungry.")
-    pause()
-    return "What do you do?"
-
-
 def first_action() -> str:
     """Print first action and collect user input"""
     print("You are in the middle of an enchanted forest where your parents left you with some bread")
@@ -59,7 +48,6 @@ def cabin_knock() -> str:
 
 '''
 print(intro())
-print(long_story())
 print(forest_cabin())
 '''
 
