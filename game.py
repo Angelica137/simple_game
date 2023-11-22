@@ -16,14 +16,18 @@ def pause() -> int:
 
 
 def first_action() -> str:
-    """Print first action and collect user input"""
+    """Print first action"""
     print("You are in the middle of an enchanted forest where your parents left you with some bread")
     pause()
     print("After walking for a while you come across a cabin made of ginger bread and candy.")
     pause()
     print("You are suspicious, but you are also tired and hungry.")    
     pause()
-    print("What do you do?")
+    return ("What do you do?")
+
+
+def first_choices():
+    """Collects user input from first action"""
     return get_user_input("Enter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.\n")
 
 
@@ -61,6 +65,14 @@ def garden_picking() -> str:
     print("You look around and see nothing, what do you do?")
     return get_user_input("You shrug and keep on eating the marshmallows.\nYou put the marshmallow down and look around.\n")
 
+
+def marshmallows() -> str:
+    while True:
+        path = marshmallows_eating()
+        if path == "1":
+            return "GAME OVER"
+        if path == "2":
+            return "WIN"
 
 
 '''

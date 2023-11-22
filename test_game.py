@@ -25,25 +25,26 @@ def test_pause():
     assert result == time.sleep(2)
     
 
-def test_first_action_1():
+def test_first_action_story():
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
             first_action()           
         output_lines = captured_output.getvalue().strip().split('\n')
         
-    assert len(output_lines) == 6
+    assert len(output_lines) == 3
     assert "You are in the middle of an enchanted forest where your parents left you with some bread" in output_lines[0]
     assert "After walking for a while you come across a cabin made of ginger bread and candy." in output_lines[1]
     assert "You are suspicious, but you are also tired and hungry." in output_lines[2]
-    assert "What do you do?" in output_lines[3]
-    assert "Enter 1 to knock on the door." in output_lines[4]
-    assert "Enter 2 to pick whatever you can grab." in output_lines[5]
-  
+
+
+def test_first_action_return():
+    result = first_action()
+    assert result == "What do you do?"
 
 def test_first_action_user_input_1():
     """test user input from fisrt action is captured"""
     with patch("builtins.input", side_effect=["1"]):
-        result = first_action()
+        result = first_choices()
     assert result == "1"
     
 
