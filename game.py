@@ -58,6 +58,7 @@ def garden_picking() -> str:
     print("Do not eat that!” a little voice says")
     pause()
     print("You look around and see nothing, what do you do?")
+    return get_user_input("Enter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.\n")
     
     
 
