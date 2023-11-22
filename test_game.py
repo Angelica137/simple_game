@@ -96,7 +96,7 @@ def test_garden_picking_return_statement():
 def test_garden_picking_input():
     """test user input from garden picking choices"""
     with patch("builtins.input", side_effect=["1"]):
-        result = garden_picking()
+        result = garden_picking_input()
     assert result == "1"
 
 

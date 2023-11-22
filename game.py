@@ -65,13 +65,13 @@ def garden_picking() -> str:
     return "You look around and see a little fairy, what do you do?"
 
 
-def marshmallows_eating():
+def garden_picking_input():
     return get_user_input("1. You shrug and keep on eating the marshmallows.\n2. Start talking to the fairy\n")
 
 
 def marshmallows() -> str:
     while True:
-        path = marshmallows_eating()
+        path = garden_picking_input()
         if path == "1":
             return "GAME OVER"
         if path == "2":
