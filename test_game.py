@@ -41,23 +41,23 @@ def test_first_action_return():
     result = first_action()
     assert result == "What do you do?"
 
-def test_first_action_user_input_1():
-    """test user input from fisrt action is captured"""
+def test_first_choices_user_input_1():
+    """test user input from fisrt choices is captured"""
     with patch("builtins.input", side_effect=["1"]):
         result = first_choices()
     assert result == "1"
     
 
 def test_forest_cabin_path_2():
-    with patch("game.first_action", side_effect=["2"]):
+    with patch("game.forest_cabin", side_effect=["2"]):
         result = forest_cabin()
-    assert result == "You go into stealth mode and move around the property towards the nearest candy bush."
+    assert result == garden_picking()
 
 
 def test_forest_cabin_path_other():
     with patch("game.first_action", side_effect=["4", "2"]):
         result = forest_cabin()
-    assert result == "You go into stealth mode and move around the property towards the nearest candy bush."
+    assert result == garden_picking()
 
 
 def test_cabin_knock(monkeypatch):
@@ -86,7 +86,7 @@ def test_garden_picking():
     assert "After a while of nothing happening you decide to start picking up as much candy as you can and fit it in your pockets." in output_lines[1]
     assert "You reach a marshmallow pad. You love marshmallows!" in output_lines[2]
     assert "You decide to have some right there and then, after all, your pockets are getting full and heavy and you need to keep your sugar levels up." in output_lines[3]
-    assert "Do not eat that!” a little voice says" in output_lines[4]
+    assert "Do not eat that!” a little voice says." in output_lines[4]
 
 
 def test_garden_picking_return_statement():

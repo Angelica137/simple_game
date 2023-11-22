@@ -60,7 +60,7 @@ def garden_picking() -> str:
     pause()
     print("You decide to have some right there and then, after all, your pockets are getting full and heavy and you need to keep your sugar levels up.")
     pause()
-    print("Do not eat that!” a little voice says")
+    print("Do not eat that!” a little voice says.")
     pause()
     return "You look around and see a little fairy, what do you do?"
 
@@ -104,8 +104,8 @@ def fairy_outcomes_two() -> str:
     print("The lumberjacks see him and launch an attack on the ogre leaving you on the ground with some candy still i your pockets.")
     return "YOU WIN!"
 
-
+'''
 print(intro())
 print(first_action())
 print(forest_cabin())
-
+'''
