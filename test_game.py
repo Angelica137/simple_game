@@ -100,8 +100,15 @@ def test_garden_picking_input():
     assert result == "1"
 
 
-def test_marshmallows_stop():
+def test_marshmallows_1():
     """test user stops eating"""
     with patch("builtins.input", side_effect=["1"]):
         result = marshmallows()
     assert result == "You start crawling backwards, slowly."
+
+
+def test_marshmallows_2():
+    """test user talks to fairy"""
+    with patch("builtins.input", side_effect=["2"]):
+        result = marshmallows()
+    assert result == "Hello little fairy! I did not mean to steal these from you."

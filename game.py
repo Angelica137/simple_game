@@ -75,7 +75,7 @@ def marshmallows() -> str:
         if path == "1":
             return "You start crawling backwards, slowly."
         if path == "2":
-            return "WIN"
+            return "Hello little fairy! I did not mean to steal these from you."
 
 
 '''
