@@ -46,8 +46,7 @@ def cabin_knock() -> str:
     knock_outcomes = [
         "A young man opens the door.", 
         "No one answers.", 
-        "A woman opens the door.",
-        "You hear a voice from behind the door."
+        "A woman opens the door."
                 ]
     return random.choice(knock_outcomes)
     
