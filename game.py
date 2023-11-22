@@ -78,8 +78,17 @@ def marshmallows() -> str:
             return "Hello little fairy! I did not mean to steal these from you."
 
 
+def fairy_outcomes_one() -> str:
+    print("You start crawling backwards, slowly.")
+    pause()
+    print("“No wait!” you hear the little fairy scream, and then, it all goes black. You are dead :(")
+    pause()
+    return "GAME OVER."
+
+
+
+
 '''
 print(intro())
 print(forest_cabin())
 '''
-

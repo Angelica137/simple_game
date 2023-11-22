@@ -112,3 +112,19 @@ def test_marshmallows_2():
     with patch("builtins.input", side_effect=["2"]):
         result = marshmallows()
     assert result == "Hello little fairy! I did not mean to steal these from you."
+
+
+def test_fairy_outcomes_one():
+    with StringIO() as captured_output:
+        with redirect_stdout(captured_output):
+            fairy_outcomes_one()           
+        output_lines = captured_output.getvalue().strip().split('\n')
+        
+    assert len(output_lines) == 2
+    assert "You start crawling backwards, slowly." in output_lines[0]
+    assert "“No wait!” you hear the little fairy scream, and then, it all goes black. You are dead :(" in output_lines[1]
+
+
+def test_fairy_outcomes_one_return_statement():
+    result = fairy_outcomes_one()
+    assert result == "GAME OVER."
