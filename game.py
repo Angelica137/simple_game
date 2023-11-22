@@ -62,7 +62,7 @@ def garden_picking() -> str:
     pause()
     print("Do not eat that!” a little voice says")
     pause()
-    return "You look around and see nothing, what do you do?"
+    return "You look around and see a little fairy, what do you do?"
 
 
 def marshmallows_eating():
