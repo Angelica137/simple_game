@@ -87,6 +87,8 @@ def test_garden_picking():
     assert "You decide to have some right there and then, after all, your pockets are getting full and heavy and you need to keep your sugar levels up." in output_lines[3]
     assert "Do not eat that!” a little voice says" in output_lines[4]
     assert "You look around and see nothing, what do you do?" in output_lines[5]
+    assert "You shrug and keep on eating the marshmallows." in output_lines[6]
+    assert "You put the marshmallow down and look around." in output_lines[7]
 
 
 def test_garden_picking_input():
