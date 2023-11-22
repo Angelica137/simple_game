@@ -78,7 +78,7 @@ def marshmallows() -> str:
             return "Hello little fairy! I did not mean to steal these from you."
 
 
-def fairy_outcomes_one() -> str:
+def fairy_outcomes_lose() -> str:
     print("You start crawling backwards, slowly.")
     pause()
     print("“No wait!” you hear the little fairy scream, and then, it all goes black. You are dead :(")
@@ -86,7 +86,7 @@ def fairy_outcomes_one() -> str:
     return "GAME OVER."
 
 
-def fairy_outcomes_two() -> str:
+def fairy_outcomes_win() -> str:
     print("Hello little fairy! I did not mean to steal these from you.")
     pause()
     print("“you are not stealing from me. you are stealing from him!” She says angrily while pointing her tiny finger behind you.")

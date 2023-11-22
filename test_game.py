@@ -125,15 +125,15 @@ def test_fairy_outcomes_one():
     assert "“No wait!” you hear the little fairy scream, and then, it all goes black. You are dead :(" in output_lines[1]
 
 
-def test_fairy_outcomes_one_return_statement():
-    result = fairy_outcomes_one()
+def test_fairy_outcomes_lose_return_statement():
+    result = fairy_outcomes_lose()
     assert result == "GAME OVER."
 
 
-def test_fairy_outcomes_two():
+def test_fairy_outcomes_win():
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
-            fairy_outcomes_two()
+            fairy_outcomes_win()
         output_lines = captured_output.getvalue().strip().split('\n')
     
     assert len(output_lines) == 8
@@ -148,5 +148,5 @@ def test_fairy_outcomes_two():
 
 
 def test_fairy_outcomes_two_return_statement():
-    result = fairy_outcomes_two()
+    result = fairy_outcomes_win()
     assert result == "YOU WIN!"
