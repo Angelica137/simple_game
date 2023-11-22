@@ -81,7 +81,7 @@ def test_garden_picking():
             garden_picking()           
         output_lines = captured_output.getvalue().strip().split('\n')
         
-    assert len(output_lines) == 8
+    assert len(output_lines) == 5
     assert "You take care to hide amongst the bushes and try to stay aware of your surroundings and the cabin." in output_lines[0]
     assert "After a while of nothing happening you decide to start picking up as much candy as you can and fit it in your pockets." in output_lines[1]
     assert "You reach a marshmallow pad. You love marshmallows!" in output_lines[2]

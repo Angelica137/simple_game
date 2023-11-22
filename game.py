@@ -62,8 +62,11 @@ def garden_picking() -> str:
     pause()
     print("Do not eat that!” a little voice says")
     pause()
-    print("You look around and see nothing, what do you do?")
-    return get_user_input("You shrug and keep on eating the marshmallows.\nYou put the marshmallow down and look around.\n")
+    return "You look around and see nothing, what do you do?"
+
+
+def marshmallows_eating():
+    return get_user_input("1. You shrug and keep on eating the marshmallows.\n2. Start talking to the fairy\n")
 
 
 def marshmallows() -> str:
