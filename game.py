@@ -28,7 +28,13 @@ def long_story() -> str:
 
 def first_action() -> str:
     """Print first action and collect user input"""
+    print("You are in the middle of an enchanted forest where your parents left you with some bread")
     pause()
+    print("After walking for a while you come across a cabin made of ginger bread and candy.")
+    pause()
+    print("You are suspicious, but you are also tired and hungry.")    
+    pause()
+    print("What do you do?")
     return get_user_input("Enter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.\n")
 
 
