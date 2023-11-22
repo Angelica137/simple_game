@@ -83,6 +83,7 @@ def test_garden_picking():
     assert len(output_lines) == 6
     assert "You take care to hide amongst the bushes and try to stay aware of your surroundings and the cabin." in output_lines[0]
     assert "After a while of nothing happening you decide to start picking up as much candy as you can and fit it in your pockets." in output_lines[1]
-    assert "You reach a marshmallow pad. You love marshmallows! " in output_lines[2]
+    assert "You reach a marshmallow pad. You love marshmallows!" in output_lines[2]
     assert "You decide to have some right there and then, after all, your pockets are getting full and heavy and you need to keep your sugar levels up." in output_lines[3]
-    assert "Enter 1 to knock on the door." in output_lines[4]
+    assert "Do not eat that!” a little voice says" in output_lines[4]
+    assert "You look around and see nothing, what do you do?" in output_lines[5]

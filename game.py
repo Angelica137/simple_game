@@ -44,6 +44,21 @@ def cabin_knock() -> str:
         "A woman opens the door."
                 ]
     return random.choice(knock_outcomes)
+
+
+def garden_picking() -> str:
+    print("You take care to hide amongst the bushes and try to stay aware of your surroundings and the cabin.")
+    pause()
+    print("After a while of nothing happening you decide to start picking up as much candy as you can and fit it in your pockets.")
+    pause()
+    print("You reach a marshmallow pad. You love marshmallows!")
+    pause()
+    print("You decide to have some right there and then, after all, your pockets are getting full and heavy and you need to keep your sugar levels up.")
+    pause()
+    print("Do not eat that!” a little voice says")
+    pause()
+    print("You look around and see nothing, what do you do?")
+    
     
 
 '''
