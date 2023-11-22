@@ -23,7 +23,7 @@ def first_action() -> str:
     pause()
     print("You are suspicious, but you are also tired and hungry.")    
     pause()
-    return ("What do you do?")
+    return "What do you do?"
 
 
 def first_choices():
@@ -86,7 +86,23 @@ def fairy_outcomes_one() -> str:
     return "GAME OVER."
 
 
-
+def fairy_outcomes_two() -> str:
+    print("Hello little fairy! I did not mean to steal these from you.")
+    pause()
+    print("“you are not stealing from me. you are stealing from him!” She says angrily while pointing her tiny finger behind you.")
+    pause()
+    print("You turn around and see a large oar ready to hit you with a huge club.")
+    pause()
+    print("You dodge the ogre and see him smash the little fairy. You grab your pockets full of candy and run for your life!")
+    pause()
+    print("You run as fast as you can and before you know it you are out of the forest. There are some lumberjacks about to go in and you fall to your knees and try to tell them there is an ogre, but you are making no sense.")
+    pause()
+    print("You turn around nervously pointing at the forest.")
+    pause()
+    print("“Ogre!” finally you manage the words as the ogre makes it out of the forest finally catching up.")
+    pause()
+    print("The lumberjacks see him and launch an attack on the ogre leaving you on the ground with some candy still i your pockets.")
+    return "YOU WIN!"
 
 '''
 print(intro())
