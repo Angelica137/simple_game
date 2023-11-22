@@ -26,7 +26,7 @@ def first_action() -> str:
     return "What do you do?"
 
 
-def first_choices():
+def first_choices() -> str:
     """Collects user input from first action"""
     return get_user_input("Enter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.\n")
 
@@ -34,7 +34,7 @@ def first_choices():
 def forest_cabin() -> str:
     """Collects user action from first action and moves on to next action"""
     while True:
-        path = first_action()
+        path = first_choices()
         if path == '1':
             return cabin_knock()
         if path == '2':
@@ -104,7 +104,8 @@ def fairy_outcomes_two() -> str:
     print("The lumberjacks see him and launch an attack on the ogre leaving you on the ground with some candy still i your pockets.")
     return "YOU WIN!"
 
-'''
+
 print(intro())
+print(first_action())
 print(forest_cabin())
-'''
+
