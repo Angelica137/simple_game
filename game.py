@@ -38,7 +38,7 @@ def forest_cabin() -> str:
         if path == '1':
             return cabin_knock()
         if path == '2':
-            return "You go into stealth mode and move around the property towards the nearest candy bush."
+            return garden_picking()
 
 
 def cabin_knock() -> str:
