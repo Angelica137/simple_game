@@ -38,10 +38,11 @@ def forest_cabin() -> str:
 
 
 def cabin_knock() -> str:
+    """Lists the possible outcomes form knocking on the cabin"""
     knock_outcomes = [
         "A young man opens the door.", 
         "No one answers.", 
-        "A woman opens the door."
+        "You hear a voice from behind the door."
                 ]
     return random.choice(knock_outcomes)
 
@@ -59,8 +60,8 @@ def garden_picking() -> str:
     pause()
     print("You look around and see nothing, what do you do?")
     return get_user_input("You shrug and keep on eating the marshmallows.\nYou put the marshmallow down and look around.\n")
-    
-    
+
+
 
 '''
 print(intro())

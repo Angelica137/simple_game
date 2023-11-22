@@ -96,3 +96,10 @@ def test_garden_picking_input():
     with patch("builtins.input", side_effect=["1"]):
         result = garden_picking()
     assert result == "1"
+
+
+def test_marshmallows_stop():
+    """test user stops eating"""
+    with patch("builtins.input", side_effect=["1"]):
+        result = marshmallows()
+    assert result == "1"
