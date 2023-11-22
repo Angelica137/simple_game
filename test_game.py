@@ -87,3 +87,10 @@ def test_garden_picking():
     assert "You decide to have some right there and then, after all, your pockets are getting full and heavy and you need to keep your sugar levels up." in output_lines[3]
     assert "Do not eat that!” a little voice says" in output_lines[4]
     assert "You look around and see nothing, what do you do?" in output_lines[5]
+
+
+def test_garden_picking_input():
+    """test user input from garden picking choices"""
+    with patch("builtins.input", side_effect=["1"]):
+        result = garden_picking()
+    assert result == "1"
