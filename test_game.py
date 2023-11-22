@@ -41,34 +41,37 @@ def test_first_action_return():
     result = first_action()
     assert result == "What do you do?"
 
+
 def test_first_choices_user_input_1():
     """test user input from fisrt choices is captured"""
     with patch("builtins.input", side_effect=["1"]):
         result = first_choices()
     assert result == "1"
-    
+
 
 def test_forest_cabin_path_2():
+    """Asks the user for a choice at the cabin - path go to garden"""
     with patch("game.forest_cabin", side_effect=["2"]):
         result = forest_cabin()
     assert result == garden_picking()
 
 
 def test_forest_cabin_path_other():
+    """Asks the user for a choice at the cabin - path not 1 or 2"""
     with patch("game.first_action", side_effect=["4", "2"]):
         result = forest_cabin()
     assert result == garden_picking()
 
 
 def test_cabin_knock(monkeypatch):
-    """Test the user gets a result from the list of possible results.
-        this test is deterministic."""
+    """Retunrs a value from the list"""
     monkeypatch.setattr(random, 'choice', lambda seq: seq[0])
     result = cabin_knock()
     assert result == "A young man opens the door."
 
 
 def test_forest_cabin_path_1():
+    """Asks the user for a choice at the cabin - path knock on door"""
     with patch("game.first_action", return_value='1'), \
     patch('game.random.choice', return_value='A young man opens the door.'):
         result = forest_cabin()
@@ -79,19 +82,20 @@ def test_garden_picking():
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
             garden_picking()           
-        output_lines = captured_output.getvalue().strip().split('\n')
-        
-    assert len(output_lines) == 5
+        output_lines = captured_output.getvalue().strip().split('\n')        
+    assert len(output_lines) == 8
     assert "You take care to hide amongst the bushes and try to stay aware of your surroundings and the cabin." in output_lines[0]
     assert "After a while of nothing happening you decide to start picking up as much candy as you can and fit it in your pockets." in output_lines[1]
     assert "You reach a marshmallow pad. You love marshmallows!" in output_lines[2]
     assert "You decide to have some right there and then, after all, your pockets are getting full and heavy and you need to keep your sugar levels up." in output_lines[3]
     assert "Do not eat that!” a little voice says." in output_lines[4]
+    assert "You look around and see a little fairy, what do you do?" in output_lines[5]
 
 
 def test_garden_picking_return_statement():
     result = garden_picking()
-    assert result == "You look around and see a little fairy, what do you do?"
+    assert result == garden_picking_input()
+
 
 def test_garden_picking_input():
     """test user input from garden picking choices"""
@@ -114,12 +118,11 @@ def test_marshmallows_2():
     assert result == "Hello little fairy! I did not mean to steal these from you."
 
 
-def test_fairy_outcomes_one():
+def test_fairy_outcomes_lose():
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
-            fairy_outcomes_one()           
-        output_lines = captured_output.getvalue().strip().split('\n')
-        
+            fairy_outcomes_lose()           
+        output_lines = captured_output.getvalue().strip().split('\n')        
     assert len(output_lines) == 2
     assert "You start crawling backwards, slowly." in output_lines[0]
     assert "“No wait!” you hear the little fairy scream, and then, it all goes black. You are dead :(" in output_lines[1]
