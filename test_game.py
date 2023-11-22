@@ -104,4 +104,4 @@ def test_marshmallows_stop():
     """test user stops eating"""
     with patch("builtins.input", side_effect=["1"]):
         result = marshmallows()
-    assert result == "1"
+    assert result == "You start crawling backwards, slowly."

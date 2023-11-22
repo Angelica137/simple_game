@@ -73,7 +73,7 @@ def marshmallows() -> str:
     while True:
         path = garden_picking_input()
         if path == "1":
-            return "GAME OVER"
+            return "You start crawling backwards, slowly."
         if path == "2":
             return "WIN"
 
