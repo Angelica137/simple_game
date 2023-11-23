@@ -109,6 +109,22 @@ def fairy_outcomes_win() -> str:
     return "YOU WIN!\nDo you want to play again? y/n"
 
 
+def man_opens_door():
+    pause()
+    print("He is putting on his jacket and seems surprised to see you standing there. Did he not hear you knocking?")
+    print ("“Hey! who are you?” he asks")
+    print ("“I am… I… my dad left me a while a go in the forest and now I am lost.”")
+    print ("He looks around maybe looking to check that indeed you were alone. He looks down at you but you do not know what to make of it.")
+    print ("“I am leaving now, and I have nothing for you to steal so be on your way”")
+    print ("You start crying.")
+    print ("“Look, I cannot jut let in some random kid from the forest, you could be a vampire for all I know. If you want water the well is over there. If you want to sleep you can sleep with the sheep but you better not kill them!”")
+    print ("He hands you a handkerchief and moves past you.")
+    print ("“And do steal any of the candy either!”")
+    print ("You make your way to the well, and get some water and then move towards the ship pen.")
+    print ("You pick a spot to fall a sleep on the hay.")
+    print ("All of a sudden you see some read eyes in front of you. VAMPIRE!")
+    return "GAME OVER.\nDo you want to play again? y/n"
+
 #print(intro())
 #print(first_action())
 #print(forest_cabin())

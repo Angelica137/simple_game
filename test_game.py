@@ -191,3 +191,8 @@ def test_man_opens_door():
     assert "You make your way to the well, and get some water and then move towards the ship pen." in output_lines[9]
     assert "You pick a spot to fall a sleep on the hay." in output_lines[10]
     assert "All of a sudden you see some read eyes in front of you. VAMPIRE!" in output_lines[11]
+
+
+def test_man_opens_door_return_statement():
+    result = man_opens_door()
+    assert result == "GAME OVER.\nDo you want to play again? y/n"
