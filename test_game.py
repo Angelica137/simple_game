@@ -94,7 +94,7 @@ def test_first_action_story():
     assert "You are suspicious, but you are also tired and hungry." in output_lines[2]
 '''
 
-def test_garden_picking_path_1(): #THIS IS FAILING!!!
+def test_garden_picking_path_1():
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
             garden_picking()           
@@ -106,6 +106,21 @@ def test_garden_picking_path_1(): #THIS IS FAILING!!!
     assert "You decide to have some right there and then, after all, your pockets are getting full and heavy and you need to keep your sugar levels up." in output_lines[3]
     assert "Do not eat that!” a little voice says." in output_lines[4]
     assert "You look around and see a little fairy, what do you do?" in output_lines[5]
+
+
+def test_garden_picking_path_2():
+    with StringIO() as captured_output:
+        with redirect_stdout(captured_output):
+            garden_picking()           
+        output_lines = captured_output.getvalue().strip().split('\n')        
+    assert len(output_lines) == 16
+    assert "You take care to hide amongst the bushes and try to stay aware of your surroundings and the cabin." in output_lines[0]
+    assert "After a while of nothing happening you decide to start picking up as much candy as you can and fit it in your pockets." in output_lines[1]
+    assert "You reach a marshmallow pad. You love marshmallows!" in output_lines[2]
+    assert "You decide to have some right there and then, after all, your pockets are getting full and heavy and you need to keep your sugar levels up." in output_lines[3]
+    assert "Do not eat that!” a little voice says." in output_lines[4]
+    assert "You look around and see a little fairy, what do you do?" in output_lines[5]
+
 
 '''
 def test_garden_picking_return_statement(): #THIS IS FAILING!!!
