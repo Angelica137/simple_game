@@ -166,8 +166,7 @@ def test_fairy_outcomes_win():
     assert "“Ogre!” finally you manage the words as the ogre makes it out of the forest finally catching up." in output_lines[6]
     assert "The lumberjacks see him and launch an attack on the ogre leaving you on the ground with some candy still in your pockets." in output_lines[7]
 
-'''
+
 def test_fairy_outcomes_two_return_statement():
     result = fairy_outcomes_win()
-    assert result == "YOU WIN!"
-'''
+    assert result == "YOU WIN!\nDo you want to play again? y/n"
