@@ -149,7 +149,7 @@ def test_fairy_outcomes_lose_return_statement():
     result = fairy_outcomes_lose()
     assert result == "GAME OVER.\nDo you want to play again? y/n"
 
-'''
+		
 def test_fairy_outcomes_win():
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
@@ -170,3 +170,24 @@ def test_fairy_outcomes_win():
 def test_fairy_outcomes_two_return_statement():
     result = fairy_outcomes_win()
     assert result == "YOU WIN!\nDo you want to play again? y/n"
+'''
+
+
+def test_man_opens_door():
+    with StringIO() as captured_output:
+        with redirect_stdout(captured_output):
+            man_opens_door()
+        output_lines = captured_output.getvalue().strip().split('\n')
+    assert len(output_lines) == 12
+    assert "He is putting on his jacket and seems surprised to see you standing there. Did he not hear you knocking?" in output_lines[0]
+    assert "“Hey! who are you?” he asks" in output_lines[1]
+    assert "“I am… I… my dad left me a while a go in the forest and now I am lost.”" in output_lines[2]
+    assert "He looks around maybe looking to check that indeed you were alone. He looks down at you but you do not know what to make of it." in output_lines[3]
+    assert "“I am leaving now, and I have nothing for you to steal so be on your way”" in output_lines[4]
+    assert "You start crying." in output_lines[5]
+    assert "“Look, I cannot jut let in some random kid from the forest, you could be a vampire for all I know. If you want water the well is over there. If you want to sleep you can sleep with the sheep but you better not kill them!”" in output_lines[6]
+    assert "He hands you a handkerchief and moves past you." in output_lines[7]
+    assert "“And do steal any of the candy either!”" in output_lines[8]
+    assert "You make your way to the well, and get some water and then move towards the ship pen." in output_lines[9]
+    assert "You pick a spot to fall a sleep on the hay." in output_lines[10]
+    assert "All of a sudden you see some read eyes in front of you. VAMPIRE!" in output_lines[11]
