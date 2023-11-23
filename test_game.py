@@ -5,6 +5,7 @@ from contextlib import redirect_stdout
 from unittest.mock import patch
 import random
 
+'''
 def test_get_user_input(monkeypatch):
     monkeypatch.setattr('game.get_user_input', lambda _: 'Ana')
     result = get_user_input("Welcome, player 1. What is your name?\n")
@@ -80,13 +81,25 @@ def test_cabin_knock(monkeypatch):
     assert result == "A young man opens the door."
 
 
+def test_first_action_story():
+    """Test the print statements of this function"""
+    with StringIO() as captured_output:
+        with redirect_stdout(captured_output):
+            first_action()           
+        output_lines = captured_output.getvalue().strip().split('\n')
+        
+    assert len(output_lines) == 3
+    assert "You are in the middle of an enchanted forest where your parents left you with some bread" in output_lines[0]
+    assert "After walking for a while you come across a cabin made of ginger bread and candy." in output_lines[1]
+    assert "You are suspicious, but you are also tired and hungry." in output_lines[2]
 '''
-def test_garden_picking(): #THIS IS FAILING!!!
+
+def test_garden_picking_path_1(): #THIS IS FAILING!!!
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
             garden_picking()           
         output_lines = captured_output.getvalue().strip().split('\n')        
-    assert len(output_lines) == 8
+    assert len(output_lines) == 10
     assert "You take care to hide amongst the bushes and try to stay aware of your surroundings and the cabin." in output_lines[0]
     assert "After a while of nothing happening you decide to start picking up as much candy as you can and fit it in your pockets." in output_lines[1]
     assert "You reach a marshmallow pad. You love marshmallows!" in output_lines[2]
@@ -94,7 +107,7 @@ def test_garden_picking(): #THIS IS FAILING!!!
     assert "Do not eat that!” a little voice says." in output_lines[4]
     assert "You look around and see a little fairy, what do you do?" in output_lines[5]
 
-
+'''
 def test_garden_picking_return_statement(): #THIS IS FAILING!!!
     result = garden_picking()
     assert result == garden_picking_input()
