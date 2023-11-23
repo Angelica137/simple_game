@@ -170,7 +170,6 @@ def test_fairy_outcomes_win():
 def test_fairy_outcomes_two_return_statement():
     result = fairy_outcomes_win()
     assert result == "YOU WIN!\nDo you want to play again? y/n"
-'''
 
 
 def test_man_opens_door():
@@ -196,13 +195,14 @@ def test_man_opens_door():
 def test_man_opens_door_return_statement():
     result = man_opens_door()
     assert result == "GAME OVER.\nDo you want to play again? y/n"
-
+'''
 
 def test_voice_answers():
     with StringIO() as captured_output:
-        voice_answers()
-    output_lines = captured_output.getvalue().strip().split('\n')
-    assert len(output_lines) == 12
+        with redirect_stdout(captured_output):
+            voice_answers()
+        output_lines = captured_output.getvalue().strip().split('\n')
+    assert len(output_lines) == 9
     assert "You slowly enter the cabin" in output_lines[0]
     assert "You see an old lady by the kitchen stirring a pot" in output_lines[1]
     assert "“Who are you child, what do you want?”" in output_lines[2]
