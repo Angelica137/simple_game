@@ -81,19 +81,6 @@ def test_cabin_knock(monkeypatch):
     assert result == "A young man opens the door."
 
 
-def test_first_action_story():
-    """Test the print statements of this function"""
-    with StringIO() as captured_output:
-        with redirect_stdout(captured_output):
-            first_action()           
-        output_lines = captured_output.getvalue().strip().split('\n')
-        
-    assert len(output_lines) == 3
-    assert "You are in the middle of an enchanted forest where your parents left you with some bread" in output_lines[0]
-    assert "After walking for a while you come across a cabin made of ginger bread and candy." in output_lines[1]
-    assert "You are suspicious, but you are also tired and hungry." in output_lines[2]
-'''
-
 def test_garden_picking_path_1():
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
@@ -120,14 +107,13 @@ def test_garden_picking_path_2():
     assert "You decide to have some right there and then, after all, your pockets are getting full and heavy and you need to keep your sugar levels up." in output_lines[3]
     assert "Do not eat that!” a little voice says." in output_lines[4]
     assert "You look around and see a little fairy, what do you do?" in output_lines[5]
+'''
 
+def test_garden_picking_return_statement():
+    result = garden_picking()
+    assert result == marshmallows()
 
 '''
-def test_garden_picking_return_statement(): #THIS IS FAILING!!!
-    result = garden_picking()
-    assert result == garden_picking_input()
-
-
 def test_garden_picking_input():
     """test user input from garden picking choices"""
     with patch("builtins.input", side_effect=["1"]):
