@@ -51,12 +51,12 @@ def test_first_choices_user_input_1():
     assert result == "1"
 
 
-def test_forest_cabin_path_1_cabin_knock(monkeypatch):
-    """Asks the user for a choice at the cabin - path go to garden"""
-    with patch("game.forest_cabin", side_effect=["1"]):
-        monkeypatch.setattr(random, 'choice', lambda seq: seq[0])
+def test_forest_cabin_path_1_knock_on_door():
+    """Asks the user for a choice at the cabin - path knock on door"""
+    with patch("game.first_action", return_value='1'), \
+    patch('game.random.choice', return_value='A young man opens the door.'):
         result = forest_cabin()
-    assert result == "A young man opens the door."
+    assert result == 'A young man opens the door.'
 
 
 def test_forest_cabin_path_2_go_to_garden():
@@ -79,15 +79,8 @@ def test_cabin_knock(monkeypatch):
     result = cabin_knock()
     assert result == "A young man opens the door."
 
+
 '''
-def test_forest_cabin_path_1():
-    """Asks the user for a choice at the cabin - path knock on door"""
-    with patch("game.first_action", return_value='1'), \
-    patch('game.random.choice', return_value='A young man opens the door.'):
-        result = forest_cabin()
-    assert result == 'A young man opens the door.'
-
-
 def test_garden_picking(): #THIS IS FAILING!!!
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
