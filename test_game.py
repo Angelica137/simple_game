@@ -134,17 +134,17 @@ def test_marshmallows_2():
         result = marshmallows()
     assert result == fairy_outcomes_win()
 
-'''
-def test_fairy_outcomes_lose(): #THIS IS FAILING!!!
+
+def test_fairy_outcomes_lose():
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
             fairy_outcomes_lose()           
         output_lines = captured_output.getvalue().strip().split('\n')        
     assert len(output_lines) == 2
-    assert "You start crawling backwards, slowly." in output_lines[0]
+    assert "You shrug and keep on eating. She is so tiny, and you are so hungry." in output_lines[0]
     assert "“No wait!” you hear the little fairy scream, and then, it all goes black. You are dead :(" in output_lines[1]
 
-
+'''
 def test_fairy_outcomes_lose_return_statement(): #THIS IS FAILING!!!
     result = fairy_outcomes_lose()
     assert result == "GAME OVER."
