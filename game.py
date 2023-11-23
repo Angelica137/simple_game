@@ -125,6 +125,8 @@ def man_opens_door():
     print ("All of a sudden you see some read eyes in front of you. VAMPIRE!")
     return "GAME OVER.\nDo you want to play again? y/n"
 
+
+
 #print(intro())
 #print(first_action())
 #print(forest_cabin())

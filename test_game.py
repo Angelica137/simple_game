@@ -196,3 +196,20 @@ def test_man_opens_door():
 def test_man_opens_door_return_statement():
     result = man_opens_door()
     assert result == "GAME OVER.\nDo you want to play again? y/n"
+
+
+def test_voice_answers():
+    with StringIO() as captured_output:
+        voice_answers()
+    output_lines = captured_output.getvalue().strip().split('\n')
+    assert len(output_lines) == 12
+    assert "You slowly enter the cabin" in output_lines[0]
+    assert "You see an old lady by the kitchen stirring a pot" in output_lines[1]
+    assert "“Who are you child, what do you want?”" in output_lines[2]
+    assert "You explain your dad left you in the forest and never came back for you." in output_lines[3]
+    assert "She looks at you and asks for your dads name." in output_lines[4]
+    assert "“I know old Jack. Sit, you should have something to eat. We will go look for your dad after you eat”" in output_lines[5]
+    assert "“I do not think my dad wants me back”. You say while having some soup." in output_lines[6]
+    assert "“No, I do not imagine he does. You can stay here with me if you are willing to work and learn.”" in output_lines[7]
+    assert "You slowly nod. And you live happily ever after." in output_lines[8]
+    
