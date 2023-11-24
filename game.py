@@ -180,7 +180,7 @@ def go_into_cabin():
     for line in lines:
         pause()
         print(line)
-
+    return "YOU WIN!\nDo you want to play again? y/n"
 
 #print(intro())
 #print(first_action())
