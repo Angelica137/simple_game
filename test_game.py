@@ -224,14 +224,14 @@ def test_no_answer_1():
     with patch("builtins.input", side_effect=["1"]):
         result = no_answer()
     assert result == "You enter the house"
-'''
+
 
 def test_no_answer_2():
     """test user input from no_answer() is captured"""
     with patch("game.no_answer", side_effect=["2"]):
         result = no_answer()
     assert result == garden_picking()
-
+'''
 
 def test_no_answewr_path_other():
     """Asks the user for a choice when noone answers door - path not 1 or 2"""
@@ -252,3 +252,8 @@ def test_go_into_cabin():
     assert "You move towards it slowly and grab some bread for the table and mindlessly start eating it." in output_lines[2]
     assert "You slowly approach the oven to see what is cooking." in output_lines[3]
     assert "You hear some noise from behind you and before you know it… someone shoved you into the oven!" in output_lines[4]
+
+
+def test_go_into_cabin_return_statement():
+    result = go_into_cabin()
+    assert result == "YOU WIN!\nDo you want to play again? y/n"
