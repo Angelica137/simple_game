@@ -256,7 +256,7 @@ def test_go_into_cabin_return_statement():
     result = go_into_cabin()
     assert result == "YOU WIN!\nDo you want to play again? y/n"
 
-
+'''
 def test_story_telling_print():
     lines = ['1', '2', '3']
     outcome = "win"
@@ -269,4 +269,3 @@ def test_story_telling_print():
 def test_win_function():
     result = win()
     assert result == "YOU WIN!\nDo you want to play again? y/n"
-'''

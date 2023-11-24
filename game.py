@@ -26,7 +26,7 @@ def story_telling(story: list, outcome: str) -> str:
     for line in story:
         pause()
         print(line)
-    outcome = win()
+    #outcome = win()
     return outcome
 
 
@@ -195,7 +195,7 @@ go_inside_story = [
 
 
 def go_into_cabin():
-    return story_telling(go_inside_story, win)
+    return story_telling(go_inside_story, win())
 
 
 def win():
