@@ -26,7 +26,6 @@ def story_telling(story: list, outcome: str) -> str:
     for line in story:
         pause()
         print(line)
-    #outcome = win()
     return outcome
 
 
