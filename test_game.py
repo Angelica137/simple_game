@@ -36,13 +36,13 @@ def test_first_action_story():
     assert "After walking for a while you come across a cabin made of ginger bread and candy." in output_lines[1]
     assert "You are suspicious, but you are also tired and hungry." in output_lines[2]
 
-'''
+
 def test_first_action_return():
     """Tests this function return statement"""
     result = first_action()
     assert result == "What do you do?"
 
-
+'''
 def test_first_choices_user_input_1():
     """test user input from fisrt_choices() is captured"""
     with patch("builtins.input", side_effect=["1"]):
