@@ -265,3 +265,8 @@ def test_story_telling_print():
         story_telling(lines)
     for i, line in enumerate(lines):
         mock_print.assert_any_call(line)
+
+
+def test_win_function():
+    result = win()
+    assert result == "YOU WIN!\nDo you want to play again? y/n"

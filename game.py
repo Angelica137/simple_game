@@ -181,11 +181,15 @@ def story_telling(story: list) -> str:
     for line in story:
         pause()
         print(line)
-    return "YOU WIN!\nDo you want to play again? y/n"
+    return win()
 
 
 def go_into_cabin():
     return story_telling(go_inside_story)
+
+
+def win():
+    return "YOU WIN!\nDo you want to play again? y/n"
 
 #print(intro())
 #print(first_action())
