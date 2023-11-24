@@ -21,23 +21,23 @@ first_act = [
     "You are suspicious, but you are also tired and hungry."
     ]
 
-first_act_choices = "What do you do?\nEnter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.\n"
+first_act_choices = "Enter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.\n"
 
 def story_telling(story: list, outcome: str) -> str:
     for line in story:
         pause()
         print(line)
-    return get_user_input(outcome)
+    return outcome
 
 
 def first_action() -> str:
     """Print first action using story_telling()"""
-    return story_telling(first_act, first_act_choices)
+    return story_telling(first_act, "What do you do?")
 
 
 def first_choices() -> str:
     """Collects user input from first action"""
-    return "What do you do?\nEnter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.\n"
+    return get_user_input("Enter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.\n")
 
 
 def forest_cabin() -> str:
