@@ -160,6 +160,8 @@ def voice_answers():
     return "YOU WIN!\nDo you want to play again? y/n"
 
 
+def no_answer():
+    return get_user_input("Enter 1 to enter the house.\nEnter 2 to go to the garden.")
 #print(intro())
 #print(first_action())
 #print(forest_cabin())

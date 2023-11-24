@@ -224,3 +224,10 @@ def test_no_answer_1():
     with patch("builtins.input", side_effect=["1"]):
         result = no_answer()
     assert result == "1"
+
+
+def test_no_answer_2():
+    """test user input from no_answer() is captured"""
+    with patch("builtins.input", side_effect=["2"]):
+        result = no_answer()
+    assert result == "2"
