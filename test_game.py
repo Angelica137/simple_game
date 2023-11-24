@@ -40,10 +40,10 @@ def test_first_action_story():
     assert "Enter 2 to pick whatever you can grab." in output_lines[5]
 ''' 
 
-def test_first_choices_user_input_1():
-    """test user input from fisrt_choices() is captured"""
+def test_first_action_user_input_1():
+    """test user input from first_action() is captured"""
     with patch("builtins.input", side_effect=["1"]):
-        result = first_choices()
+        result = first_action()
     assert result == "1"
 
 '''
