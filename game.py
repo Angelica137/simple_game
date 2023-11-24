@@ -166,7 +166,7 @@ def no_answer():
         if path == "1":
             return "You enter the house"
         if path == "2":
-            return "You start backtracking slowly and hide in the garden."
+            return garden_picking()
 
 
 #print(intro())
