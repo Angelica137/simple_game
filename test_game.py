@@ -226,8 +226,15 @@ def test_no_answer_1():
     assert result == "1"
 
 
-def test_no_answer_2():
+def test_no_answer_1():
     """test user input from no_answer() is captured"""
     with patch("builtins.input", side_effect=["2"]):
         result = no_answer()
     assert result == "2"
+
+
+def test_no_answewr_path_other():
+    """Asks the user for a choice when noone answers door - path not 1 or 2"""
+    with patch("game.no_answer", side_effect=["4", "2"]):
+        result = no_answer()
+    assert result == get_user_input("Enter 1 to enter the house.\nEnter 2 to go to the garden.")

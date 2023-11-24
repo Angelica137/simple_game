@@ -161,9 +161,17 @@ def voice_answers():
 
 
 def no_answer():
-    return get_user_input("Enter 1 to enter the house.\nEnter 2 to go to the garden.")
+    while True:
+        path = get_user_input("Enter 1 to enter the house.\nEnter 2 to go to the garden.")
+        if path == "1":
+            return "You enter the house"
+        if path == "2":
+            return "You start backtracking slowly and hide in the garden."
+
+
 #print(intro())
 #print(first_action())
 #print(forest_cabin())
 #print(marshmallows())
 
+print(no_answer())
