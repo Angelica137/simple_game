@@ -190,7 +190,7 @@ def go_into_cabin():
 
 
 def win():
-   return "YOU WIN!\nDo you want to play again? y/n"
+    return "YOU WIN!\nDo you want to play again? y/n"
 
 #print(intro())
 #print(first_action())
