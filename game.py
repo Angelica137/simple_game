@@ -16,34 +16,28 @@ def pause() -> int:
 
 
 first_act = [
-    "You are in the middle of an enchanted forest where your parents left you with some bread",
+    "You are in the middle of an enchanted forest where your parents left you with some bread.",
     "After walking for a while you come across a cabin made of ginger bread and candy.",
     "You are suspicious, but you are also tired and hungry."
     ]
 
+first_act_choices = "What do you do?\nEnter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.\n"
 
 def story_telling(story: list, outcome: str) -> str:
     for line in story:
         pause()
         print(line)
-    return outcome
+    return get_user_input(outcome)
 
 
 def first_action() -> str:
     """Print first action using story_telling()"""
-    return story_telling(first_act, "What do you do?")
-    print("You are in the middle of an enchanted forest where your parents left you with some bread")
-    pause()
-    print("After walking for a while you come across a cabin made of ginger bread and candy.")
-    pause()
-    print("You are suspicious, but you are also tired and hungry.")    
-    pause()
-    return "What do you do?"
+    return story_telling(first_act, first_act_choices)
 
 
 def first_choices() -> str:
     """Collects user input from first action"""
-    return get_user_input("Enter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.\n")
+    return "What do you do?\nEnter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.\n"
 
 
 def forest_cabin() -> str:
@@ -198,7 +192,7 @@ def go_into_cabin():
 
 
 def win():
-    return "YOU WIN!\nDo you want to play again? y/n"
+    return get_user_input("YOU WIN!\nDo you want to play again? y/n")
 
 #print(intro())
 #print(first_action())
