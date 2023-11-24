@@ -212,4 +212,8 @@ def test_voice_answers():
     assert "“I do not think my dad wants me back”. You say while having some soup." in output_lines[6]
     assert "“No, I do not imagine he does. You can stay here with me if you are willing to work and learn.”" in output_lines[7]
     assert "You slowly nod. And you live happily ever after." in output_lines[8]
-    
+
+
+def test_voice_answers_return_statement():
+    result = voice_answers()
+    assert result == "YOU WIN!\nDo you want to play again? y/n"

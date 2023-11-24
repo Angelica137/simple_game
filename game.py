@@ -157,6 +157,7 @@ def voice_answers():
     print("“No, I do not imagine he does. You can stay here with me if you are willing to work and learn.”")
     pause()
     print("You slowly nod. And you live happily ever after.")
+    return "YOU WIN!\nDo you want to play again? y/n"
 
 
 #print(intro())
