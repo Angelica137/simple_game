@@ -244,7 +244,6 @@ def test_go_into_cabin():
     """returns print statements from entering the cabin"""
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
-            story = go_inside_story
             go_into_cabin()
         output_lines = captured_output.getvalue().strip().split('\n')
     assert len(output_lines) == 5
@@ -256,7 +255,6 @@ def test_go_into_cabin():
 
 
 def test_go_into_cabin_return_statement():
-    story = go_inside_story
     result = go_into_cabin()
     assert result == "YOU WIN!\nDo you want to play again? y/n"
 
