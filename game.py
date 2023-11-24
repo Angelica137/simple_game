@@ -15,8 +15,24 @@ def pause() -> int:
     return time.sleep(2)
 
 
+first_act = [
+    "You are in the middle of an enchanted forest where your parents left you with some bread",
+    "After walking for a while you come across a cabin made of ginger bread and candy.",
+    "You are suspicious, but you are also tired and hungry."
+    ]
+
+
+def story_telling(story: list, outcome: str) -> str:
+    for line in story:
+        pause()
+        print(line)
+    outcome = win()
+    return outcome
+
+
 def first_action() -> str:
-    """Print first action"""
+    """Print first action using story_telling()"""
+    return story_telling(first_act, "What do you do?")
     print("You are in the middle of an enchanted forest where your parents left you with some bread")
     pause()
     print("After walking for a while you come across a cabin made of ginger bread and candy.")
@@ -176,13 +192,6 @@ go_inside_story = [
         "You slowly approach the oven to see what is cooking.",
         "You hear some noise from behind you and before you know it… someone shoved you into the oven!"
 		]
-
-def story_telling(story: list, outcome) -> str:
-    for line in story:
-        pause()
-        print(line)
-    outcome = win()
-    return outcome
 
 
 def go_into_cabin():

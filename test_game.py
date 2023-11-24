@@ -5,7 +5,7 @@ from contextlib import redirect_stdout
 from unittest.mock import patch
 import random
 
-'''
+
 def test_get_user_input(monkeypatch):
     monkeypatch.setattr('game.get_user_input', lambda _: 'Ana')
     result = get_user_input("Welcome, player 1. What is your name?\n")
@@ -14,7 +14,6 @@ def test_get_user_input(monkeypatch):
 
 def test_intro(monkeypatch, capfd):
     monkeypatch.setattr('game.get_user_input', lambda _: 'Ana')
-    # Redirect stdout to capfd
     with capfd.disabled():
         result = intro()
     assert result == 'Hi, Ana.'
@@ -32,13 +31,12 @@ def test_first_action_story():
         with redirect_stdout(captured_output):
             first_action()           
         output_lines = captured_output.getvalue().strip().split('\n')
-        
     assert len(output_lines) == 3
     assert "You are in the middle of an enchanted forest where your parents left you with some bread" in output_lines[0]
     assert "After walking for a while you come across a cabin made of ginger bread and candy." in output_lines[1]
     assert "You are suspicious, but you are also tired and hungry." in output_lines[2]
 
-
+'''
 def test_first_action_return():
     """Tests this function return statement"""
     result = first_action()
@@ -239,7 +237,7 @@ def test_no_answewr_path_other():
         result = no_answer()
     assert result == garden_picking()
 
-'''
+
 def test_go_into_cabin():
     """returns print statements from entering the cabin"""
     with StringIO() as captured_output:
@@ -271,3 +269,4 @@ def test_story_telling_print():
 def test_win_function():
     result = win()
     assert result == "YOU WIN!\nDo you want to play again? y/n"
+'''
