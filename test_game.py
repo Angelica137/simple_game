@@ -195,7 +195,7 @@ def test_man_opens_door():
 def test_man_opens_door_return_statement():
     result = man_opens_door()
     assert result == "GAME OVER.\nDo you want to play again? y/n"
-'''
+
 
 def test_voice_answers():
     with StringIO() as captured_output:
@@ -217,3 +217,10 @@ def test_voice_answers():
 def test_voice_answers_return_statement():
     result = voice_answers()
     assert result == "YOU WIN!\nDo you want to play again? y/n"
+'''
+
+def test_no_answer_1():
+    """test user input from no_answer() is captured"""
+    with patch("builtins.input", side_effect=["1"]):
+        result = no_answer()
+    assert result == "1"
