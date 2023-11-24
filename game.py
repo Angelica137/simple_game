@@ -177,11 +177,15 @@ go_inside_story = [
         "You hear some noise from behind you and before you know it… someone shoved you into the oven!"
 		]
 
-def go_into_cabin(go_inside_story: list) -> str:
-    for line in go_inside_story:
+def story_telling(story: list) -> str:
+    for line in story:
         pause()
         print(line)
     return "YOU WIN!\nDo you want to play again? y/n"
+
+
+def go_into_cabin():
+    return story_telling(go_inside_story)
 
 #print(intro())
 #print(first_action())
