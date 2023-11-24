@@ -217,7 +217,7 @@ def test_voice_answers():
 def test_voice_answers_return_statement():
     result = voice_answers()
     assert result == "YOU WIN!\nDo you want to play again? y/n"
-'''
+
 
 def test_no_answer_1():
     """test user input from no_answer() is captured"""
@@ -230,11 +230,11 @@ def test_no_answer_2():
     """test user input from no_answer() is captured"""
     with patch("builtins.input", side_effect=["2"]):
         result = no_answer()
-    assert result == "You start backtracking slowly and hide in the garden."
+    assert result == garden_picking()
 
-
+'''
 def test_no_answewr_path_other():
     """Asks the user for a choice when noone answers door - path not 1 or 2"""
     with patch("game.no_answer", side_effect=["4", "2"]):
         result = no_answer()
-    assert result == "You start backtracking slowly and hide in the garden."
+    assert result == garden_picking()
