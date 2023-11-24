@@ -261,8 +261,9 @@ def test_go_into_cabin_return_statement():
 
 def test_story_telling_print():
     lines = ['1', '2', '3']
+    outcome = "win"
     with patch("builtins.print") as mock_print:
-        story_telling(lines)
+        story_telling(lines, outcome)
     for i, line in enumerate(lines):
         mock_print.assert_any_call(line)
 
