@@ -231,7 +231,7 @@ def test_no_answer_2():
     with patch("game.no_answer", side_effect=["2"]):
         result = no_answer()
     assert result == garden_picking()
-'''
+
 
 def test_no_answewr_path_other():
     """Asks the user for a choice when noone answers door - path not 1 or 2"""
@@ -239,12 +239,13 @@ def test_no_answewr_path_other():
         result = no_answer()
     assert result == garden_picking()
 
-
+'''
 def test_go_into_cabin():
     """returns print statements from entering the cabin"""
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
-            go_into_cabin()
+            story = go_inside_story
+            go_into_cabin(story)
         output_lines = captured_output.getvalue().strip().split('\n')
     assert len(output_lines) == 5
     assert "You go into the house and see the cabin is empty." in output_lines[0]
@@ -255,5 +256,6 @@ def test_go_into_cabin():
 
 
 def test_go_into_cabin_return_statement():
-    result = go_into_cabin()
+    story = go_inside_story
+    result = go_into_cabin(story)
     assert result == "YOU WIN!\nDo you want to play again? y/n"

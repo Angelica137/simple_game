@@ -169,15 +169,16 @@ def no_answer():
             return garden_picking()
 
 
-def go_into_cabin():
-    lines = [
+go_inside_story = [
         "You go into the house and see the cabin is empty.",
         "The oven apears to be on.",
         "You move towards it slowly and grab some bread for the table and mindlessly start eating it.",
         "You slowly approach the oven to see what is cooking.",
         "You hear some noise from behind you and before you know it… someone shoved you into the oven!"
 		]
-    for line in lines:
+
+def go_into_cabin(go_inside_story: list) -> str:
+    for line in go_inside_story:
         pause()
         print(line)
     return "YOU WIN!\nDo you want to play again? y/n"
