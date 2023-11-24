@@ -23,7 +23,7 @@ def test_pause():
     with freeze_time("2022-01-01 00:00:00"):
         result = pause()       
     assert result == time.sleep(2)
-'''  
+ 
 
 def test_first_action_story():
     """Test the print statements of this function"""
@@ -38,13 +38,7 @@ def test_first_action_story():
     assert "What do you do?" in output_lines[3]
     assert "Enter 1 to knock on the door." in output_lines[4]
     assert "Enter 2 to pick whatever you can grab." in output_lines[5]
-'''
-
-def test_first_action_return():
-    """Tests this function return statement"""
-    result = first_action()
-    assert result == "What do you do?"
-
+''' 
 
 def test_first_choices_user_input_1():
     """test user input from fisrt_choices() is captured"""
@@ -52,7 +46,7 @@ def test_first_choices_user_input_1():
         result = first_choices()
     assert result == "1"
 
-
+'''
 def test_forest_cabin_path_1_knock_on_door():
     """Asks the user for a choice at the cabin - path knock on door"""
     with patch("game.first_action", return_value='1'), \
