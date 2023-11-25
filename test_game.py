@@ -49,7 +49,7 @@ def test_first_choices_user_input_1():
         result = first_choices()
     assert result == "1"
 
-'''
+
 def test_forest_cabin_path_1_knock_on_door():
     """Asks the user for a choice at the cabin - path knock on door"""
     with patch("game.first_action", return_value='1'), \
@@ -71,7 +71,7 @@ def test_forest_cabin_path_other():
         result = forest_cabin()
     assert result == garden_picking()
 
-
+'''
 def test_cabin_knock(monkeypatch):
     """Retunrs a value from the list"""
     monkeypatch.setattr(random, 'choice', lambda seq: seq[0])

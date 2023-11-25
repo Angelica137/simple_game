@@ -19,20 +19,18 @@ first_act = [
     "You are in the middle of an enchanted forest where your parents left you with some bread.",
     "After walking for a while you come across a cabin made of ginger bread and candy.",
     "You are suspicious, but you are also tired and hungry."
-    ]
+]
 
-first_act_choices = "Enter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.\n"
-
-def story_telling(story: list, outcome: str) -> str:
+def story_telling(story: list) -> str:
     for line in story:
         pause()
         print(line)
-    return outcome
+    return "What do you do?"
 
 
 def first_action() -> str:
     """Print first action using story_telling()"""
-    return story_telling(first_act, "What do you do?")
+    return story_telling(first_act)
 
 
 def first_choices() -> str:
@@ -60,19 +58,18 @@ def cabin_knock() -> str:
     return random.choice(knock_outcomes)
 
 
+roam_garden = [
+    "You take care to hide amongst the bushes and try to stay aware of your surroundings and the cabin.",
+    "After a while of nothing happening you decide to start picking up as much candy as you can and fit it in your pockets.",
+    "You reach a marshmallow pad. You love marshmallows!",
+    "You decide to have some right there and then, after all, your pockets are getting full and heavy and you need to keep your sugar levels up.",
+    "“Do not eat that!” a little voice says.",
+    "You look around and see a little fairy, what do you do?",
+]
+
 def garden_picking() -> str:
     """Lays the story for what happens at the garden and asks for input"""
-    print("You take care to hide amongst the bushes and try to stay aware of your surroundings and the cabin.")
-    pause()
-    print("After a while of nothing happening you decide to start picking up as much candy as you can and fit it in your pockets.")
-    pause()
-    print("You reach a marshmallow pad. You love marshmallows!")
-    pause()
-    print("You decide to have some right there and then, after all, your pockets are getting full and heavy and you need to keep your sugar levels up.")
-    pause()
-    print("“Do not eat that!” a little voice says.")
-    pause()
-    print("You look around and see a little fairy, what do you do?")
+    print(story_telling(roam_garden))
     return marshmallows()
 
 
