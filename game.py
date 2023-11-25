@@ -118,6 +118,7 @@ fairy = [
 
 win = "YOU WIN!\nDo you want to play again? y/n"
 
+
 def fairy_outcomes_win() -> str:
     return story_telling(fairy, win)
 
