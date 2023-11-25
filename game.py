@@ -15,22 +15,26 @@ def pause() -> int:
     return time.sleep(2)
 
 
+def story_telling(story: list, outcome: str) -> str:
+    for line in story:
+        pause()
+        print(line)
+    return continue_scene
+
+
 first_act = [
     "You are in the middle of an enchanted forest where your parents left you with some bread.",
     "After walking for a while you come across a cabin made of ginger bread and candy.",
     "You are suspicious, but you are also tired and hungry."
 ]
 
-def story_telling(story: list) -> str:
-    for line in story:
-        pause()
-        print(line)
-    return "What do you do?"
+
+continue_scene = "What do you do?"
 
 
 def first_action() -> str:
     """Print first action using story_telling()"""
-    return story_telling(first_act)
+    return story_telling(first_act, continue_scene)
 
 
 def first_choices() -> str:
@@ -69,7 +73,7 @@ roam_garden = [
 
 def garden_picking() -> str:
     """Lays the story for what happens at the garden and asks for input"""
-    print(story_telling(roam_garden))
+    print(story_telling(roam_garden, continue_scene))
     return marshmallows()
 
 
@@ -78,12 +82,17 @@ def garden_picking_input():
     return get_user_input("Enter 1 to shrug and keep on eating the marshmallows.\nEnter 2 to start talking to the fairy\n")
 
 
+keep_eating = [
+        "You shrug and keep on eating. She is so tiny, and you are so hungry.",
+        "“No wait!” you hear the little fairy scream, and then, it all goes black. You are dead :(",
+]
+
+
+game_over = "GAME OVER.\nDo you want to play again? y/n"
+
+
 def fairy_outcomes_lose() -> str:
-    print("You shrug and keep on eating. She is so tiny, and you are so hungry.")
-    pause()
-    print("“No wait!” you hear the little fairy scream, and then, it all goes black. You are dead :(")
-    pause()
-    return "GAME OVER.\nDo you want to play again? y/n"
+    return story_telling(keep_eating, game_over)
 
 
 def marshmallows() -> str:
@@ -96,23 +105,21 @@ def marshmallows() -> str:
             return fairy_outcomes_win()
 
 
+fairy = [
+    "Hello little fairy! I did not mean to steal these from you.",
+    "“You are not stealing from me. you are stealing from him!” She says angrily while pointing her tiny finger behind you.",
+    "You turn around and see a large ogre ready to hit you with a huge club.",
+    "You dodge the ogre and see him smash the little fairy. You grab your pockets full of candy and run for your life!",
+    "You run as fast as you can and before you know it you are out of the forest. There are some lumberjacks about to go in and you fall to your knees and try to tell them there is an ogre, but you are making no sense.",
+    "You turn around nervously pointing at the forest.",
+    "“Ogre!” finally you manage the words as the ogre makes it out of the forest finally catching up.",
+    "The lumberjacks see him and launch an attack on the ogre leaving you on the ground with some candy still in your pockets."
+]
+
+win = "YOU WIN!\nDo you want to play again? y/n"
+
 def fairy_outcomes_win() -> str:
-    print("Hello little fairy! I did not mean to steal these from you.")
-    pause()
-    print("“You are not stealing from me. you are stealing from him!” She says angrily while pointing her tiny finger behind you.")
-    pause()
-    print("You turn around and see a large ogre ready to hit you with a huge club.")
-    pause()
-    print("You dodge the ogre and see him smash the little fairy. You grab your pockets full of candy and run for your life!")
-    pause()
-    print("You run as fast as you can and before you know it you are out of the forest. There are some lumberjacks about to go in and you fall to your knees and try to tell them there is an ogre, but you are making no sense.")
-    pause()
-    print("You turn around nervously pointing at the forest.")
-    pause()
-    print("“Ogre!” finally you manage the words as the ogre makes it out of the forest finally catching up.")
-    pause()
-    print("The lumberjacks see him and launch an attack on the ogre leaving you on the ground with some candy still in your pockets.")
-    return "YOU WIN!\nDo you want to play again? y/n"
+    return story_telling(fairy, win)
 
 
 def man_opens_door():
