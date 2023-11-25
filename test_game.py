@@ -71,7 +71,7 @@ def test_forest_cabin_path_other():
         result = forest_cabin()
     assert result == garden_picking()
 
-'''
+
 def test_cabin_knock(monkeypatch):
     """Retunrs a value from the list"""
     monkeypatch.setattr(random, 'choice', lambda seq: seq[0])
@@ -84,13 +84,13 @@ def test_garden_picking_path_1():
         with redirect_stdout(captured_output):
             garden_picking()           
         output_lines = captured_output.getvalue().strip().split('\n')        
-    assert len(output_lines) == 10
+    assert len(output_lines) == 11
     assert "You take care to hide amongst the bushes and try to stay aware of your surroundings and the cabin." in output_lines[0]
     assert "After a while of nothing happening you decide to start picking up as much candy as you can and fit it in your pockets." in output_lines[1]
     assert "You reach a marshmallow pad. You love marshmallows!" in output_lines[2]
     assert "You decide to have some right there and then, after all, your pockets are getting full and heavy and you need to keep your sugar levels up." in output_lines[3]
     assert "Do not eat that!” a little voice says." in output_lines[4]
-    assert "You look around and see a little fairy, what do you do?" in output_lines[5]
+    assert "You look around and see a little fairy." in output_lines[5]
 
 
 def test_garden_picking_path_2():
@@ -98,13 +98,13 @@ def test_garden_picking_path_2():
         with redirect_stdout(captured_output):
             garden_picking()           
         output_lines = captured_output.getvalue().strip().split('\n')        
-    assert len(output_lines) == 16
+    assert len(output_lines) == 19
     assert "You take care to hide amongst the bushes and try to stay aware of your surroundings and the cabin." in output_lines[0]
     assert "After a while of nothing happening you decide to start picking up as much candy as you can and fit it in your pockets." in output_lines[1]
     assert "You reach a marshmallow pad. You love marshmallows!" in output_lines[2]
     assert "You decide to have some right there and then, after all, your pockets are getting full and heavy and you need to keep your sugar levels up." in output_lines[3]
     assert "Do not eat that!” a little voice says." in output_lines[4]
-    assert "You look around and see a little fairy, what do you do?" in output_lines[5]
+    assert "You look around and see a little fairy." in output_lines[5]
 
 
 def test_garden_picking_return_statement():
@@ -154,7 +154,7 @@ def test_fairy_outcomes_win():
             fairy_outcomes_win()
         output_lines = captured_output.getvalue().strip().split('\n')
     
-    assert len(output_lines) == 8
+    assert len(output_lines) == 10
     assert "Hello little fairy! I did not mean to steal these from you." in output_lines[0]
     assert "“You are not stealing from me. you are stealing from him!” She says angrily while pointing her tiny finger behind you." in output_lines[1]
     assert "You turn around and see a large ogre ready to hit you with a huge club." in output_lines[2]
@@ -167,7 +167,7 @@ def test_fairy_outcomes_win():
 
 def test_fairy_outcomes_two_return_statement():
     result = fairy_outcomes_win()
-    assert result == "YOU WIN!\nDo you want to play again? y/n"
+    assert result == "Do you want to play again? y/n"
 
 
 def test_man_opens_door():
@@ -266,7 +266,6 @@ def test_story_telling_print():
         mock_print.assert_any_call(line)
 
 
-def test_win_function():
-    result = win()
-    assert result == "YOU WIN!\nDo you want to play again? y/n"
-'''
+def test_play_again_function():
+    result = play_again()
+    assert result == "Do you want to play again? y/n"
