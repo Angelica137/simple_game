@@ -24,7 +24,7 @@ def test_pause():
         result = pause()       
     assert result == time.sleep(2)
 
-'''
+
 def test_first_action_story():
     """Test the print statements of this function"""
     with StringIO() as captured_output:
@@ -80,11 +80,12 @@ def test_cabin_knock(monkeypatch):
 
 
 def test_garden_picking_path_1():
+    """Tests using choosing to keep eating and stop playing"""
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
             garden_picking()           
         output_lines = captured_output.getvalue().strip().split('\n')        
-    assert len(output_lines) == 11
+    assert len(output_lines) == 13
     assert "You take care to hide amongst the bushes and try to stay aware of your surroundings and the cabin." in output_lines[0]
     assert "After a while of nothing happening you decide to start picking up as much candy as you can and fit it in your pockets." in output_lines[1]
     assert "You reach a marshmallow pad. You love marshmallows!" in output_lines[2]
@@ -94,6 +95,7 @@ def test_garden_picking_path_1():
 
 
 def test_garden_picking_path_2():
+    """Tests using choosing to talk to the fairy"""
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
             garden_picking()           
@@ -117,13 +119,13 @@ def test_garden_picking_input():
     with patch("builtins.input", side_effect=["1"]):
         result = garden_picking_input()
     assert result == "1"
-
+'''
 
 def test_marshmallows_1():
-    """test user stops eating"""
+    """test user stops eating and wants to stop playing"""
     with patch("builtins.input", side_effect=["1"]):
         result = marshmallows()
-    assert result == fairy_outcomes_lose()
+    assert result == "See you later!"
 
 
 def test_marshmallows_2():
@@ -132,22 +134,25 @@ def test_marshmallows_2():
         result = marshmallows()
     assert result == fairy_outcomes_win()
 
-
+'''
 def test_fairy_outcomes_lose():
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
             fairy_outcomes_lose()           
         output_lines = captured_output.getvalue().strip().split('\n')        
-    assert len(output_lines) == 2
+    assert len(output_lines) == 4
     assert "You shrug and keep on eating. She is so tiny, and you are so hungry." in output_lines[0]
     assert "“No wait!” you hear the little fairy scream, and then, it all goes black. You are dead :(" in output_lines[1]
 
 
 def test_fairy_outcomes_lose_return_statement():
-    result = fairy_outcomes_lose()
-    assert result == "GAME OVER.\nDo you want to play again? y/n"
+    """Test return statement from loosing outcome at fairy"""
+    with patch("builtins.input", side_effect=["n"]):
+        result = fairy_outcomes_lose()
+    assert result == "See you later!"
 
-		
+
+	
 def test_fairy_outcomes_win():
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
@@ -166,8 +171,9 @@ def test_fairy_outcomes_win():
 
 
 def test_fairy_outcomes_two_return_statement():
-    result = fairy_outcomes_win()
-    assert result == "Do you want to play again? y/n"
+    with patch("builtins.input", side_effect=["n"]):
+        result = fairy_outcomes_win()
+    assert result == "See you later!"
 
 
 def test_man_opens_door():
@@ -175,7 +181,7 @@ def test_man_opens_door():
         with redirect_stdout(captured_output):
             man_opens_door()
         output_lines = captured_output.getvalue().strip().split('\n')
-    assert len(output_lines) == 12
+    assert len(output_lines) == 14
     assert "He is putting on his jacket and seems surprised to see you standing there. Did he not hear you knocking?" in output_lines[0]
     assert "“Hey! who are you?” he asks" in output_lines[1]
     assert "“I am… I… my dad left me a while a go in the forest and now I am lost.”" in output_lines[2]
@@ -191,8 +197,9 @@ def test_man_opens_door():
 
 
 def test_man_opens_door_return_statement():
-    result = man_opens_door()
-    assert result == "GAME OVER.\nDo you want to play again? y/n"
+    with patch("builtins.input", side_effect=["n"]):
+        result = man_opens_door()
+    assert result == "See you later!"
 
 
 def test_voice_answers():
@@ -200,7 +207,7 @@ def test_voice_answers():
         with redirect_stdout(captured_output):
             voice_answers()
         output_lines = captured_output.getvalue().strip().split('\n')
-    assert len(output_lines) == 9
+    assert len(output_lines) == 11
     assert "You slowly enter the cabin" in output_lines[0]
     assert "You see an old lady by the kitchen stirring a pot" in output_lines[1]
     assert "“Who are you child, what do you want?”" in output_lines[2]
@@ -213,8 +220,9 @@ def test_voice_answers():
 
 
 def test_voice_answers_return_statement():
-    result = voice_answers()
-    assert result == "YOU WIN!\nDo you want to play again? y/n"
+    with patch("builtins.input", side_effect=["n"]):
+        result = voice_answers()
+    assert result == "See you later!"
 
 
 def test_no_answer_1():
@@ -254,7 +262,7 @@ def test_go_into_cabin():
 
 def test_go_into_cabin_return_statement():
     result = go_into_cabin()
-    assert result == "YOU WIN!\nDo you want to play again? y/n"
+    assert result == "YOU WIN!"
 
 
 def test_story_telling_print():
@@ -266,6 +274,23 @@ def test_story_telling_print():
         mock_print.assert_any_call(line)
 
 
-def test_play_again_function():
-    result = play_again()
-    assert result == "Do you want to play again? y/n"
+def test_play_again_function_no():
+    """test user input from play again, no"""
+    with patch("game.play_again", side_effect=["n"]):
+        result = play_again()
+    assert result == "See you later!"
+'''
+
+def test_play_again_yes():
+    """test user input from play again, yes"""
+    with patch("builtins.play_again", side_effect=["y"]):
+        result = play_again()
+    assert result == first_action()
+
+'''
+def test_play_again_invalid_input():
+    """test user input from invalid input, keeps asking"""
+    with patch("game.play_again", side_effect=["4", "n"]):
+        result = play_again()
+    assert result == "See you later!"
+'''

@@ -23,8 +23,8 @@ def story_telling(story: list, outcome: str) -> str:
 
 
 continue_scene = "What do you do?"
-game_over = "GAME OVER.\nDo you want to play again? y/n"
-win = "YOU WIN!\nDo you want to play again? y/n"
+game_over = "GAME OVER."
+win = "YOU WIN!"
 
 
 first_act = [
@@ -82,7 +82,7 @@ def garden_picking() -> str:
 
 def garden_picking_input():
     """Gives the user choices for the garden action"""
-    return get_user_input("Enter 1 to shrug and keep on eating the marshmallows.\nEnter 2 to start talking to the fairy\n")
+    return get_user_input("Enter 1 to shrug and keep on eating the marshmallows.\nEnter 2 to start talking to the fairy.\n")
 
 
 keep_eating = [
@@ -92,7 +92,8 @@ keep_eating = [
 
 
 def fairy_outcomes_lose() -> str:
-    return story_telling(keep_eating, game_over)
+    print(story_telling(keep_eating, game_over))
+    return play_again()
 
 
 def marshmallows() -> str:
@@ -119,7 +120,7 @@ fairy = [
 
 def fairy_outcomes_win() -> str:
     print(story_telling(fairy, win))
-    return "Do you want to play again? y/n" #use play_agai()
+    return play_again()
 
 
 cabin_man = [
@@ -139,34 +140,30 @@ cabin_man = [
 
 
 def man_opens_door():
-    return story_telling(cabin_man, game_over)
+    print(story_telling(cabin_man, game_over))
+    return play_again()
 
+
+voice = [
+    "You slowly enter the cabin",
+    "You see an old lady by the kitchen stirring a pot",
+    "“Who are you child, what do you want?”",
+    "You explain your dad left you in the forest and never came back for you.",
+    "She looks at you and asks for your dads name.",
+    "“I know old Jack. Sit, you should have something to eat. We will go look for your dad after you eat”",
+    "“I do not think my dad wants me back”. You say while having some soup.",
+    "“No, I do not imagine he does. You can stay here with me if you are willing to work and learn.”",
+    "You slowly nod. And you live happily ever after."
+]
 
 def voice_answers():
-    pause()
-    print("You slowly enter the cabin")
-    pause()
-    print("You see an old lady by the kitchen stirring a pot")
-    pause()
-    print("“Who are you child, what do you want?”")
-    pause()
-    print("You explain your dad left you in the forest and never came back for you.")
-    pause()
-    print("She looks at you and asks for your dads name.")
-    pause()
-    print("“I know old Jack. Sit, you should have something to eat. We will go look for your dad after you eat”")
-    pause()
-    print("“I do not think my dad wants me back”. You say while having some soup.")
-    pause()
-    print("“No, I do not imagine he does. You can stay here with me if you are willing to work and learn.”")
-    pause()
-    print("You slowly nod. And you live happily ever after.")
-    return "YOU WIN!\nDo you want to play again? y/n"
+    print(story_telling(voice, win))
+    return play_again()
 
 
 def no_answer():
     while True:
-        path = get_user_input("Enter 1 to enter the house.\nEnter 2 to go to the garden.")
+        path = get_user_input("Enter 1 to enter the house.\nEnter 2 to go to the garden.\n")
         if path == "1":
             return "You enter the house"
         if path == "2":
@@ -188,7 +185,13 @@ def go_into_cabin():
 
 def play_again():
     #amend to take user input when ready
-    return "Do you want to play again? y/n"
+    while True:
+        path = get_user_input("Do you want to play again? y/n\n")
+        if path == "n":
+            return "See you later!"
+        if path == "y":
+            return first_action()
+    #return "Do you want to play again? y/n"
 
 
 #print(intro())
@@ -197,3 +200,4 @@ def play_again():
 #print(marshmallows())
 
 #print(no_answer())
+#print(garden_picking())
