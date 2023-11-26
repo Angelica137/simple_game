@@ -7,19 +7,6 @@ def intro() -> str:
     return (f"Hi, {name}.")
 
 
-def end_scene(number: int):
-    scene_outcomes = {
-        continue_scene: "What do you do?",
-        game_over: "GAME OVER.",
-        win: "YOU WIN!"
-    }
-    
-
-continue_scene = "What do you do?"
-game_over = "GAME OVER."
-win = "YOU WIN!"
-
-
 first_act = [
     "You are in the middle of an enchanted forest where your parents left you with some bread.",
     "After walking for a while you come across a cabin made of ginger bread and candy.",
@@ -29,7 +16,7 @@ first_act = [
 
 def first_action() -> str:
     """Print first action using story_telling()"""
-    return story_telling(first_act, continue_scene)
+    return story_telling(first_act, "continue")
 
 
 def first_choices() -> str:
