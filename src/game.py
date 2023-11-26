@@ -57,7 +57,7 @@ def play():
 
 def first_action() -> str:
     """Print first action using story_telling()"""
-    return story_telling(first_act, continue_scene)
+    return story_telling(first_act, "continue")
 
 
 def first_choices() -> str:
