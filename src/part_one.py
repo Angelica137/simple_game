@@ -1,4 +1,4 @@
-from mechanics import *
+from src.mechanics import *
 
 
 def intro() -> str:

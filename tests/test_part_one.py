@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 
 def test_intro(monkeypatch, capfd):
-    monkeypatch.setattr('src.mechanics.get_user_input', lambda _: 'Ana')
+    monkeypatch.setattr('src.part_one.get_user_input', lambda _: 'Ana')
     with capfd.disabled():
         result = intro()
     assert result == 'Hi, Ana.'
