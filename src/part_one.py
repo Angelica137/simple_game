@@ -7,6 +7,14 @@ def intro() -> str:
     return (f"Hi, {name}.")
 
 
+def end_scene(number: int):
+    scene_outcomes = {
+        continue_scene: "What do you do?",
+        game_over: "GAME OVER.",
+        win: "YOU WIN!"
+    }
+    
+
 continue_scene = "What do you do?"
 game_over = "GAME OVER."
 win = "YOU WIN!"

@@ -18,7 +18,7 @@ def test_pause():
 def test_story_telling():
     with patch('builtins.print') as mock_print:
         story = ["1", "something else", "something other"]
-        outcome = "Hello"
+        outcome = "win"
         result = story_telling(story, outcome)
         mock_print.assert_has_calls([
             call("1"),
@@ -26,4 +26,4 @@ def test_story_telling():
             call("something other")
 				])
 
-        assert result == outcome
+        assert result == "YOU WIN!"

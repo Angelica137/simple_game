@@ -14,7 +14,7 @@ def intro() -> str:
 def pause() -> int:
     return time.sleep(2)
 
-
+'''
 def story_telling(story: list, outcome: str) -> str:
     for line in story:
         pause()
@@ -25,6 +25,22 @@ def story_telling(story: list, outcome: str) -> str:
 continue_scene = "What do you do?"
 game_over = "GAME OVER."
 win = "YOU WIN!"
+'''
+
+scene_outcomes = {
+        "continue": "What do you do?",
+        "lose": "GAME OVER.",
+        "win": "YOU WIN!"
+    }
+
+
+def story_telling(story: list, outcome: str) -> str:
+    for line in story:
+        pause()
+        print(line)
+        end_scene = scene_outcomes.get(outcome)
+    return end_scene
+
 
 
 first_act = [
