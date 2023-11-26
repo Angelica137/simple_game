@@ -1,7 +1,5 @@
 from src.mechanics import *
 from freezegun import freeze_time
-from io import StringIO
-from contextlib import redirect_stdout
 from unittest.mock import patch, call
 
 
