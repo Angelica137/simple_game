@@ -197,7 +197,8 @@ def play_again():
 #print(intro())
 #print(first_action())
 #print(forest_cabin())
-#print(marshmallows())
+print(marshmallows())
 
 #print(no_answer())
 #print(garden_picking())
+
