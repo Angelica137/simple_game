@@ -1,4 +1,4 @@
-from src.one import *
+from src.mechanics import *
 from freezegun import freeze_time
 from io import StringIO
 from contextlib import redirect_stdout
@@ -7,13 +7,13 @@ from unittest.mock import patch
 
 
 def test_get_user_input(monkeypatch):
-    monkeypatch.setattr('src.one.get_user_input', lambda _: 'Ana')
+    monkeypatch.setattr('src.mechanics.get_user_input', lambda _: 'Ana')
     result = get_user_input("Welcome, player 1. What is your name?\n")
     assert result == 'Ana'
 
 
 def test_intro(monkeypatch, capfd):
-    monkeypatch.setattr('src.one.get_user_input', lambda _: 'Ana')
+    monkeypatch.setattr('src.mechanics.get_user_input', lambda _: 'Ana')
     with capfd.disabled():
         result = intro()
     assert result == 'Hi, Ana.'

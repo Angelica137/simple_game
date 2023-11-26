@@ -6,12 +6,6 @@ def get_user_input(prompt: str) -> str:
     return input(prompt)
 
 
-def intro() -> str:
-    """Print intro statement and collect user input"""
-    name = get_user_input("Welcome, player 1. What is your name?\n")
-    return (f"Hi, {name}.")
-
-
 def pause() -> int:
     return time.sleep(2)
 
@@ -26,6 +20,12 @@ def story_telling(story: list, outcome: str) -> str:
 continue_scene = "What do you do?"
 game_over = "GAME OVER."
 win = "YOU WIN!"
+
+
+def intro() -> str:
+    """Print intro statement and collect user input"""
+    name = get_user_input("Welcome, player 1. What is your name?\n")
+    return (f"Hi, {name}.")
 
 
 first_act = [
