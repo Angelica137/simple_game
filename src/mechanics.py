@@ -1,4 +1,5 @@
 import time
+from src.part_one import first_action
 
 
 def get_user_input(prompt: str) -> str:
@@ -23,3 +24,12 @@ def story_telling(story: list, outcome: str) -> str:
         print(line)
     end_scene = scene_outcomes.get(outcome)
     return end_scene
+
+
+def play_again():
+    while True:
+        path = get_user_input("Do you want to play again? y/n\n")
+        if path == "n":
+            return "See you later!"
+        if path == "y":
+            return first_action()

@@ -27,3 +27,24 @@ def test_story_telling():
 				])
 
         assert result == "YOU WIN!"
+
+
+def test_play_again_function_no():
+    """test user input from play again, no"""
+    with patch("src.mechanics.play_again", side_effect=["n"]):
+        result = play_again()
+    assert result == "See you later!"
+
+
+def test_play_again_yes():
+    """test user input from play again, yes"""
+    with patch("builtins.input", side_effect=["y"]):
+        result = play_again()
+    assert result == first_action()
+
+
+def test_play_again_invalid_input():
+    """test user input from invalid input, keeps asking"""
+    with patch("src.mechanics.play_again", side_effect=["4", "n"]):
+        result = play_again()
+    assert result == "See you later!"
