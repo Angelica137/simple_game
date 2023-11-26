@@ -123,16 +123,16 @@ def test_garden_picking_input():
 
 def test_marshmallows_1():
     """test user stops eating and wants to stop playing"""
-    with patch("builtins.input", side_effect=["1"]):
+    with patch("builtins.input", side_effect=["1", "n"]):
         result = marshmallows()
     assert result == "See you later!"
 
 
 def test_marshmallows_2():
     """test user talks to fairy"""
-    with patch("builtins.input", side_effect=["2"]):
+    with patch("builtins.input", side_effect=["2", "n"]):
         result = marshmallows()
-    assert result == fairy_outcomes_win()
+    assert result == "See you later!"
 
 '''
 def test_fairy_outcomes_lose():
