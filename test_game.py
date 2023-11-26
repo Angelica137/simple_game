@@ -119,7 +119,7 @@ def test_garden_picking_input():
     with patch("builtins.input", side_effect=["1"]):
         result = garden_picking_input()
     assert result == "1"
-'''
+
 
 def test_marshmallows_1():
     """test user stops eating and wants to stop playing"""
@@ -134,7 +134,7 @@ def test_marshmallows_2():
         result = marshmallows()
     assert result == "See you later!"
 
-'''
+
 def test_fairy_outcomes_lose():
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):

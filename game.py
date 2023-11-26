@@ -34,6 +34,11 @@ first_act = [
 ]
 
 
+def play():
+    print (first_action())
+    print(forest_cabin())
+
+
 def first_action() -> str:
     """Print first action using story_telling()"""
     return story_telling(first_act, continue_scene)
@@ -45,23 +50,13 @@ def first_choices() -> str:
 
 
 def forest_cabin() -> str:
-    """Collects user action from first action and moves on to next action"""
+    """Collects user input from first action and moves on to next action"""
     while True:
         path = first_choices()
         if path == '1':
             return cabin_knock()
         if path == '2':
             return garden_picking()
-
-
-def cabin_knock() -> str:
-    """Lists the possible outcomes form knocking on the cabin"""
-    knock_outcomes = [
-        "A young man opens the door.", 
-        "No one answers.", 
-        "You hear a voice from behind the door."
-                ]
-    return random.choice(knock_outcomes)
 
 
 roam_garden = [
@@ -139,6 +134,25 @@ cabin_man = [
 ]
 
 
+knock_outcomes = [
+        "A young man opens the door.", 
+        "No one answers.", 
+        "You hear a voice from behind the door."
+                ]
+
+
+def cabin_knock() -> str:
+    """Lists the possible outcomes form knocking on the cabin"""
+    path = random.choice(knock_outcomes)
+    print(path)
+    if path == knock_outcomes[0]:
+        return man_opens_door()
+    if path == knock_outcomes[1]:
+        return go_into_cabin()
+    if path == knock_outcomes[2]:
+        return voice_answers()
+
+
 def man_opens_door():
     print(story_telling(cabin_man, game_over))
     return play_again()
@@ -184,21 +198,13 @@ def go_into_cabin():
 
 
 def play_again():
-    #amend to take user input when ready
     while True:
         path = get_user_input("Do you want to play again? y/n\n")
         if path == "n":
             return "See you later!"
         if path == "y":
             return first_action()
-    #return "Do you want to play again? y/n"
 
 
-#print(intro())
-#print(first_action())
-#print(forest_cabin())
-#print(marshmallows())
 
-#print(no_answer())
-#print(garden_picking())
-
+print(play())
