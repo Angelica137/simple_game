@@ -1,4 +1,4 @@
-from game import *
+from src.game import *
 from freezegun import freeze_time
 from io import StringIO
 from contextlib import redirect_stdout

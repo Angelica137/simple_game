@@ -36,7 +36,7 @@ first_act = [
 
 def play():
     print (first_action())
-    print(forest_cabin())
+    return forest_cabin()
 
 
 def first_action() -> str:
@@ -118,22 +118,6 @@ def fairy_outcomes_win() -> str:
     return play_again()
 
 
-cabin_man = [
-    "He is putting on his jacket and seems surprised to see you standing there. Did he not hear you knocking?",
-    "“Hey! who are you?” he asks",
-    "“I am… I… my dad left me a while a go in the forest and now I am lost.”",
-    "He looks around maybe looking to check that indeed you were alone. He looks down at you but you do not know what to make of it.",
-    "“I am leaving now, and I have nothing for you to steal so be on your way”",
-    "You start crying.",
-    "“Look, I cannot jut let in some random kid from the forest, you could be a vampire for all I know. If you want water the well is over there. If you want to sleep you can sleep with the sheep but you better not kill them!”",
-    "He hands you a handkerchief and moves past you.",
-    "“And do steal any of the candy either!”",
-    "You make your way to the well, and get some water and then move towards the ship pen.",
-    "You pick a spot to fall a sleep on the hay.",
-    "All of a sudden you see some read eyes in front of you. VAMPIRE!",
-]
-
-
 knock_outcomes = [
         "A young man opens the door.", 
         "No one answers.", 
@@ -151,6 +135,22 @@ def cabin_knock() -> str:
         return go_into_cabin()
     if path == knock_outcomes[2]:
         return voice_answers()
+
+
+cabin_man = [
+    "He is putting on his jacket and seems surprised to see you standing there. Did he not hear you knocking?",
+    "“Hey! who are you?” he asks",
+    "“I am… I… my dad left me a while a go in the forest and now I am lost.”",
+    "He looks around maybe looking to check that indeed you were alone. He looks down at you but you do not know what to make of it.",
+    "“I am leaving now, and I have nothing for you to steal so be on your way”",
+    "You start crying.",
+    "“Look, I cannot jut let in some random kid from the forest, you could be a vampire for all I know. If you want water the well is over there. If you want to sleep you can sleep with the sheep but you better not kill them!”",
+    "He hands you a handkerchief and moves past you.",
+    "“And do steal any of the candy either!”",
+    "You make your way to the well, and get some water and then move towards the ship pen.",
+    "You pick a spot to fall a sleep on the hay.",
+    "All of a sudden you see some read eyes in front of you. VAMPIRE!",
+]
 
 
 def man_opens_door():
@@ -208,3 +208,4 @@ def play_again():
 
 
 print(play())
+
