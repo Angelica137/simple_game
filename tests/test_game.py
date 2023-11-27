@@ -152,7 +152,6 @@ def test_fairy_outcomes_lose_return_statement():
     assert result == "See you later!"
 
 
-	
 def test_fairy_outcomes_win():
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):

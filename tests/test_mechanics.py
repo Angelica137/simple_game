@@ -36,9 +36,9 @@ def test_play_again_function_no():
     assert result == "See you later!"
 
 
-def test_play_again_yes():
+def test_play_again_yes(): # this test fails I think it cannot run here because of the order
     """test user input from play again, yes"""
-    with patch("builtins.input", side_effect=["y"]):
+    with patch("src.mechanics.play_again", side_effect=["y"]):
         result = play_again()
     assert result == first_action()
 

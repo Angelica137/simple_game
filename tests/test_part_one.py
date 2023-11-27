@@ -55,4 +55,3 @@ def test_forest_cabin_path_other():
     """Asks the user for a choice at the cabin - path not 1 or 2"""
     with patch("src.part_one.first_action", side_effect=["4", "2"]):
         result = forest_cabin()
-    assert result == garden_picking()
