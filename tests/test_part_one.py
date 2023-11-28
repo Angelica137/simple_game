@@ -3,7 +3,6 @@ from io import StringIO
 from contextlib import redirect_stdout
 from unittest.mock import patch
 import random
-from src.end_game import *
 
 
 def test_intro(monkeypatch, capfd):
@@ -37,7 +36,7 @@ def test_first_choices_user_input_1():
         result = first_choices()
     assert result == "1"
 
-
+'''
 def test_forest_cabin_path_1_knock_on_door():
     """Asks the user for a choice at the cabin - path knock on door.
         Do not play again."""
@@ -58,3 +57,5 @@ def test_forest_cabin_path_other():
     """Asks the user for a choice at the cabin - path not 1 or 2"""
     with patch("src.part_one.first_action", side_effect=["4", "2"]):
         result = forest_cabin()
+    assert result == garden_picking()
+'''

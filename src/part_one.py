@@ -1,6 +1,4 @@
 from src.mechanics import *
-from src.knock_knock import cabin_knock
-from src.garden import garden_picking
 
 
 def intro() -> str:
@@ -25,7 +23,7 @@ def first_choices() -> str:
     """Collects user input from first action"""
     return get_user_input("Enter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.\n")
 
-
+'''
 def forest_cabin() -> str:
     """Collects user input from first action and moves on to next action"""
     while True:
@@ -34,12 +32,5 @@ def forest_cabin() -> str:
             return cabin_knock()
         if path == '2':
             return garden_picking()
+'''
 
-
-def play_again():
-    while True:
-        path = get_user_input("Do you want to play again? y/n\n")
-        if path == "n":
-            return "See you later!"
-        if path == "y":
-            return first_action()
