@@ -1,5 +1,4 @@
 import time
-#from src.part_one import first_action
 
 
 def get_user_input(prompt: str) -> str:
