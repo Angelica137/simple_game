@@ -5,7 +5,8 @@ from unittest.mock import patch
 
 
 def test_garden_picking_path_1():
-    """Tests using choosing to keep eating and stop playing"""
+    """Tests using choosing to keep eating and stop playing -> does NOT want to play. 
+        Enter 1 then n. """
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
             garden_picking()           
@@ -20,7 +21,8 @@ def test_garden_picking_path_1():
 
 
 def test_garden_picking_path_2():
-    """Tests using choosing to talk to the fairy"""
+    """Tests using choosing to talk to the fairy -> does NOT want to play.
+        Wnter 2 then n."""
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
             garden_picking()           
