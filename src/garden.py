@@ -1,4 +1,5 @@
 from src.mechanics import *
+from src.end_game import *
 
 
 roam_garden = [

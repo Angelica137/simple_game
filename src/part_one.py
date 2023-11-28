@@ -1,5 +1,6 @@
 from src.mechanics import *
-#from src.knock_knock import *
+from src.knock_knock import cabin_knock
+from src.garden import garden_picking
 
 
 def intro() -> str:

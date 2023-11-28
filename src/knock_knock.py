@@ -1,5 +1,6 @@
 from src.mechanics import *
 from src.garden import garden_picking
+from src.end_game import *
 import random
 
 
