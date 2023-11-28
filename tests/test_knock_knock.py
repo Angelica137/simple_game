@@ -39,7 +39,7 @@ def test_man_opens_door_return_statement():
 
 
 def test_voice_answers():
-    """Enter n"""
+    """User does not want to play, enter n"""
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
             voice_answers()
