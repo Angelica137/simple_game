@@ -1,7 +1,7 @@
-from src.mechanics import *
-from src.part_one import *
-from src.garden import garden_picking
-from src.end_game import *
+from actions.mechanics import *
+from actions.part_one import *
+from actions.garden import garden_picking
+from actions.end_game import *
 import random
 
 
@@ -91,4 +91,5 @@ go_inside_story = [
 
 
 def go_into_cabin():
-    return story_telling(go_inside_story, "win")
+    print(story_telling(go_inside_story, "win"))
+    return play_again()
