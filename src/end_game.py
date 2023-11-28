@@ -1,4 +1,5 @@
-from src.part_one import *
+from src.part_one import first_action
+from src.mechanics import get_user_input
 
 
 def play_again():

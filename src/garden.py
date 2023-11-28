@@ -1,5 +1,5 @@
 from src.mechanics import *
-from src.end_game import *
+#from src.part_one import play_again
 
 
 roam_garden = [
