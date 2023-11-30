@@ -19,7 +19,7 @@ def garden_picking() -> str:
 
 def garden_picking_input():
     """Gives the user choices for the garden action"""
-    return get_user_input("Enter 1 to shrug and keep on eating the marshmallows.\nEnter 2 to start talking to the fairy.\n")
+    return input("Enter 1 to shrug and keep on eating the marshmallows.\nEnter 2 to start talking to the fairy.\n")
 
 
 keep_eating = [

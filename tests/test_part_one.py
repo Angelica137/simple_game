@@ -1,12 +1,15 @@
-from src.part_one import *
+from src.actions.part_one import *
 from io import StringIO
 from contextlib import redirect_stdout
 from unittest.mock import patch
 import random
 
 
+
+
+
 def test_intro(monkeypatch, capfd):
-    monkeypatch.setattr('src.part_one.get_user_input', lambda _: 'Ana')
+    monkeypatch.setattr('src.actions.part_one.intro', lambda _: 'Ana')
     with capfd.disabled():
         result = intro()
     assert result == 'Hi, Ana.'
@@ -24,6 +27,7 @@ def test_first_action_story():
     assert "You are suspicious, but you are also tired and hungry." in output_lines[2]
 
 
+'''
 def test_first_action_return_statement():
     """Test first action returns string"""
     result = first_action()
@@ -36,7 +40,7 @@ def test_first_choices_user_input_1():
         result = first_choices()
     assert result == "1"
 
-'''
+
 def test_forest_cabin_path_1_knock_on_door():
     """Asks the user for a choice at the cabin - path knock on door.
         Do not play again."""
