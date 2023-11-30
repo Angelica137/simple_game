@@ -1,4 +1,4 @@
-from actions.mechanics import *
+from .mechanics import *
 
 
 roam_garden = [

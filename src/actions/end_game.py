@@ -1,5 +1,5 @@
-from actions.knock_knock import forest_cabin
-from actions.part_one import intro
+from .knock_knock import *
+from .part_one import intro
 
 
 def play_game():

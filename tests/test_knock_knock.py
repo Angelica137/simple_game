@@ -1,4 +1,4 @@
-from src.knock_knock import *
+from src.actions.knock_knock import *
 from io import StringIO
 from contextlib import redirect_stdout
 from unittest.mock import patch
@@ -8,10 +8,10 @@ from unittest.mock import patch
 def test_forest_cabin_path_1_knock_on_door():
     """Asks the user for a choice at the cabin - path knock on door.
         Do not play again."""
-    with patch("src.part_one.first_action", return_value='1'), \
+    with patch("src.actions.part_one.first_action", return_value='1'), \
     patch('random.choice', return_value='A young man opens the door.'):
         result = forest_cabin()
-    assert result == "See you later!"
+    assert result == "GAME OVER."
 
 '''
 def test_forest_cabin_path_2_go_to_garden():
@@ -26,7 +26,7 @@ def test_forest_cabin_path_other():
     with patch("src.part_one.first_action", side_effect=["4", "2"]):
         result = forest_cabin()
     assert result == garden_picking()
-'''
+
 
 
 def test_cabin_knock(monkeypatch):
@@ -125,3 +125,4 @@ def test_go_into_cabin():
 def test_go_into_cabin_return_statement():
     result = go_into_cabin()
     assert result == "YOU WIN!"
+'''

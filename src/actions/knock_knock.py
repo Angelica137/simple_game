@@ -1,7 +1,7 @@
-from actions.mechanics import *
-from actions.part_one import *
-from actions.garden import garden_picking
-from actions.end_game import *
+from .mechanics import *
+from .part_one import *
+from .garden import garden_picking
+from .end_game import *
 import random
 
 
@@ -72,7 +72,7 @@ def voice_answers():
 
 def no_answer():
     while True:
-        path = get_user_input("Enter 1 to enter the house.\nEnter 2 to go to the garden.\n")
+        path = input("Enter 1 to enter the house.\nEnter 2 to go to the garden.\n")
         if path == "1":
             return "You enter the house"
         if path == "2":
