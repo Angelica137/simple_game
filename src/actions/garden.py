@@ -1,5 +1,4 @@
 from actions.mechanics import *
-#from actions.end_game import play_again
 
 
 roam_garden = [
@@ -30,8 +29,7 @@ keep_eating = [
 
 
 def fairy_outcomes_lose() -> str:
-    print(story_telling(keep_eating, "lose"))
-    #return play_again()
+    return(story_telling(keep_eating, "lose"))
 
 
 def marshmallows() -> str:
@@ -57,5 +55,4 @@ fairy = [
 
 
 def fairy_outcomes_win() -> str:
-    print(story_telling(fairy, "win"))
-    #return play_again()
+    return(story_telling(fairy, "win"))

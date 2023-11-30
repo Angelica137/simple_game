@@ -21,7 +21,6 @@ def story_telling(story: list, outcome: str) -> str:
     for line in story:
         pause()
         print(line)
-    end_scene = scene_outcomes.get(outcome)
-    return end_scene
+    return scene_outcomes.get(outcome)
 
 

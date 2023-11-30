@@ -51,8 +51,7 @@ cabin_man = [
 
 
 def man_opens_door():
-    print(story_telling(cabin_man, "lose"))
-    #return play_again()
+    return(story_telling(cabin_man, "lose"))
 
 
 voice = [
@@ -68,8 +67,7 @@ voice = [
 ]
 
 def voice_answers():
-    print(story_telling(voice, "win"))
-    #return play_again()
+    return(story_telling(voice, "win"))
 
 
 def no_answer():
@@ -91,5 +89,4 @@ go_inside_story = [
 
 
 def go_into_cabin():
-    print(story_telling(go_inside_story, "win"))
-    #return play_again()
+    return(story_telling(go_inside_story, "win"))
