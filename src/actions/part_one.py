@@ -3,7 +3,7 @@ from actions.mechanics import *
 
 def intro() -> str:
     """Print intro statement and collect user input"""
-    name = get_user_input("Welcome, player 1. What is your name?\n")
+    name = input("Welcome, player 1. What is your name?\n")
     return (f"Hi, {name}.")
 
 
@@ -21,5 +21,5 @@ def first_action() -> str:
 
 def first_choices() -> str:
     """Collects user input from first action"""
-    return get_user_input("Enter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.\n")
+    return input("Enter 1 to knock on the door.\nEnter 2 to pick whatever you can grab.\n")
 
