@@ -9,7 +9,7 @@ def test_pause():
         result = pause()       
     assert result == time.sleep(2)
 
-'''
+
 def test_story_telling():
     with patch('builtins.print') as mock_print:
         story = ["1", "something else", "something other"]
@@ -22,4 +22,3 @@ def test_story_telling():
 				])
 
         assert result == "YOU WIN!"
-'''
