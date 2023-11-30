@@ -4,6 +4,31 @@ from contextlib import redirect_stdout
 from unittest.mock import patch
 
 
+
+def test_forest_cabin_path_1_knock_on_door():
+    """Asks the user for a choice at the cabin - path knock on door.
+        Do not play again."""
+    with patch("src.part_one.first_action", return_value='1'), \
+    patch('random.choice', return_value='A young man opens the door.'):
+        result = forest_cabin()
+    assert result == "See you later!"
+
+'''
+def test_forest_cabin_path_2_go_to_garden():
+    """Asks the user for a choice at the cabin - path go to garden"""
+    with patch("src.part_one.forest_cabin", side_effect=["2"]):
+        result = forest_cabin()
+    assert result == garden_picking()
+
+
+def test_forest_cabin_path_other():
+    """Asks the user for a choice at the cabin - path not 1 or 2"""
+    with patch("src.part_one.first_action", side_effect=["4", "2"]):
+        result = forest_cabin()
+    assert result == garden_picking()
+'''
+
+
 def test_cabin_knock(monkeypatch):
     """Retunrs a value from the list - outcome lose, choose no"""
     monkeypatch.setattr(random, 'choice', lambda seq: seq[0])

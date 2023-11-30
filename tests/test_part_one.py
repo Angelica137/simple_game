@@ -5,9 +5,6 @@ from unittest.mock import patch
 import random
 
 
-
-
-
 def test_intro(monkeypatch, capfd):
     monkeypatch.setattr('src.actions.part_one.intro', lambda _: 'Ana')
     with capfd.disabled():
@@ -27,7 +24,6 @@ def test_first_action_story():
     assert "You are suspicious, but you are also tired and hungry." in output_lines[2]
 
 
-'''
 def test_first_action_return_statement():
     """Test first action returns string"""
     result = first_action()
@@ -39,27 +35,3 @@ def test_first_choices_user_input_1():
     with patch("builtins.input", side_effect=["1"]):
         result = first_choices()
     assert result == "1"
-
-
-def test_forest_cabin_path_1_knock_on_door():
-    """Asks the user for a choice at the cabin - path knock on door.
-        Do not play again."""
-    with patch("src.part_one.first_action", return_value='1'), \
-    patch('random.choice', return_value='A young man opens the door.'):
-        result = forest_cabin()
-    assert result == "See you later!"
-
-
-def test_forest_cabin_path_2_go_to_garden():
-    """Asks the user for a choice at the cabin - path go to garden"""
-    with patch("src.part_one.forest_cabin", side_effect=["2"]):
-        result = forest_cabin()
-    assert result == garden_picking()
-
-
-def test_forest_cabin_path_other():
-    """Asks the user for a choice at the cabin - path not 1 or 2"""
-    with patch("src.part_one.first_action", side_effect=["4", "2"]):
-        result = forest_cabin()
-    assert result == garden_picking()
-'''
