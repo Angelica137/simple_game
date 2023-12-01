@@ -6,7 +6,7 @@ import random
 
 
 def test_intro(monkeypatch, capfd):
-    monkeypatch.setattr('src.actions.part_one.intro', lambda _: 'Ana')
+    monkeypatch.setattr('builtins.input', lambda _: 'Ana')
     with capfd.disabled():
         result = intro()
     assert result == 'Hi, Ana.'

@@ -13,14 +13,14 @@ def test_forest_cabin_path_1_knock_on_door():
         result = forest_cabin()
     assert result == "GAME OVER."
 
-'''
+
 def test_forest_cabin_path_2_go_to_garden():
     """Asks the user for a choice at the cabin - path go to garden"""
-    with patch("src.part_one.forest_cabin", side_effect=["2"]):
+    with patch("src.actions.part_one.forest_cabin", side_effect=["2"]):
         result = forest_cabin()
     assert result == garden_picking()
 
-
+'''
 def test_forest_cabin_path_other():
     """Asks the user for a choice at the cabin - path not 1 or 2"""
     with patch("src.part_one.first_action", side_effect=["4", "2"]):

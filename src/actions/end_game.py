@@ -1,8 +1,8 @@
 from .knock_knock import *
-from .part_one import intro
+from .part_one import first_action
 
 
 def play_game():
-    print(intro())
+    print(first_action())
     print(forest_cabin())
 
