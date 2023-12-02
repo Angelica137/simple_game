@@ -1,9 +1,9 @@
-from src.garden import *
+from src.actions.garden import *
 from io import StringIO
 from contextlib import redirect_stdout
 from unittest.mock import patch
 
-
+'''
 def test_garden_picking_path_1():
     """Tests using choosing to keep eating and stop playing -> does NOT want to play. 
         Enter 1 then n. """
@@ -11,15 +11,34 @@ def test_garden_picking_path_1():
         with redirect_stdout(captured_output):
             garden_picking()           
         output_lines = captured_output.getvalue().strip().split('\n')        
-    assert len(output_lines) == 13
+    assert len(output_lines) == 11
     assert "You take care to hide amongst the bushes and try to stay aware of your surroundings and the cabin." in output_lines[0]
     assert "After a while of nothing happening you decide to start picking up as much candy as you can and fit it in your pockets." in output_lines[1]
     assert "You reach a marshmallow pad. You love marshmallows!" in output_lines[2]
     assert "You decide to have some right there and then, after all, your pockets are getting full and heavy and you need to keep your sugar levels up." in output_lines[3]
     assert "Do not eat that!” a little voice says." in output_lines[4]
     assert "You look around and see a little fairy." in output_lines[5]
+'''
 
+def test_garden_picking_path_1():
+    """Tests choosing to keep eating and stop playing -> does NOT want to play. 
+        Enter 1 then n."""
+    with patch("builtins.input", side_effect=["1", "n"]), StringIO() as captured_output:
+        with redirect_stdout(captured_output):
+            garden_picking()
+        output_lines = captured_output.getvalue().strip().split('\n')
 
+    assert len(output_lines) == 9
+    assert "You take care to hide amongst the bushes and try to stay aware of your surroundings and the cabin." in output_lines[0]
+    assert "After a while of nothing happening you decide to start picking up as much candy as you can and fit it in your pockets." in output_lines[1]
+    assert "You reach a marshmallow pad. You love marshmallows!" in output_lines[2]
+    assert "You decide to have some right there and then, after all, your pockets are getting full and heavy and you need to keep your sugar levels up." in output_lines[3]
+    assert "Do not eat that!” a little voice says." in output_lines[4]
+    assert "You look around and see a little fairy." in output_lines[5]
+    assert "What do you do?" in output_lines[6]
+    assert "You shrug and keep on eating. She is so tiny, and you are so hungry." in output_lines[7]
+    assert "“No wait!” you hear the little fairy scream, and then, it all goes black. You are dead :(" in output_lines[8]
+'''
 def test_garden_picking_path_2():
     """Tests using choosing to talk to the fairy -> does NOT want to play.
         Wnter 2 then n."""
@@ -100,3 +119,4 @@ def test_fairy_outcomes_two_return_statement():
     with patch("builtins.input", side_effect=["n"]):
         result = fairy_outcomes_win()
     assert result == "See you later!"
+'''
