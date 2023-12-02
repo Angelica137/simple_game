@@ -82,7 +82,7 @@ def test_fairy_outcomes_lose_return_statement():
     with patch("builtins.input", side_effect=["n"]):
         result = fairy_outcomes_lose()
     assert result == "GAME OVER."
-'''
+
 
 def test_fairy_outcomes_win():
     with StringIO() as captured_output:
@@ -104,5 +104,4 @@ def test_fairy_outcomes_win():
 def test_fairy_outcomes_two_return_statement():
     with patch("builtins.input", side_effect=["n"]):
         result = fairy_outcomes_win()
-    assert result == "See you later!"
-'''
+    assert result == "YOU WIN!"
