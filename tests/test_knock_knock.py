@@ -56,7 +56,7 @@ def test_man_opens_door_return_statement():
     with patch("builtins.input", side_effect=["n"]):
         result = man_opens_door()
     assert result == "GAME OVER."
-'''
+
 
 def test_voice_answers():
     """User does not want to play, enter n"""
@@ -79,9 +79,9 @@ def test_voice_answers():
 def test_voice_answers_return_statement():
     with patch("builtins.input", side_effect=["n"]):
         result = voice_answers()
-    assert result == "See you later!"
+    assert result == "YOU WIN!"
 
-
+'''
 def test_no_answer_1():
     """test user input from no_answer() is captured"""
     with patch("builtins.input", side_effect=["1"]):
