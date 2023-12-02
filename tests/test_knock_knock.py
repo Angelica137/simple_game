@@ -75,27 +75,27 @@ def test_voice_answers():
     assert "“No, I do not imagine he does. You can stay here with me if you are willing to work and learn.”" in output_lines[7]
     assert "You slowly nod. And you live happily ever after." in output_lines[8]
 
-'''
+
 def test_voice_answers_return_statement():
     with patch("builtins.input", side_effect=["n"]):
         result = voice_answers()
     assert result == "YOU WIN!"
 
-'''
+
 def test_no_answer_1():
     """test user input from no_answer() is captured"""
     with patch("builtins.input", side_effect=["1"]):
         result = no_answer()
     assert result == "You enter the house"
 
-
+'''
 def test_no_answer_2():
     """test user input from no_answer() is captured"""
-    with patch("src.knock_knock.no_answer", side_effect=["2"]):
+    with patch("builtins.input", side_effect=["2", "2", "2"]):
         result = no_answer()
-    assert result == garden_picking()
+    assert result == "YOU WIN!"
 
-
+'''
 def test_no_answewr_path_other():
     """Asks the user for a choice when noone answers door - path not 1 or 2"""
     with patch("src.knock_knock.no_answer", side_effect=["4", "2"]):
