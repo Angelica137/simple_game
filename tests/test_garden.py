@@ -76,14 +76,14 @@ def test_fairy_outcomes_lose():
     assert "You shrug and keep on eating. She is so tiny, and you are so hungry." in output_lines[0]
     assert "“No wait!” you hear the little fairy scream, and then, it all goes black. You are dead :(" in output_lines[1]
 
-'''
+
 def test_fairy_outcomes_lose_return_statement():
     """Test return statement from loosing outcome at fairy"""
     with patch("builtins.input", side_effect=["n"]):
         result = fairy_outcomes_lose()
-    assert result == "See you later!"
+    assert result == "GAME OVER."
 
-
+'''
 def test_fairy_outcomes_win():
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
