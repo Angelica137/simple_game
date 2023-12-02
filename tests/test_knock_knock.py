@@ -3,7 +3,7 @@ from io import StringIO
 from contextlib import redirect_stdout
 from unittest.mock import patch
 
-'''
+
 def test_forest_cabin():
     """Asks the user for a choice at the cabin - path knock on door.
         Do not play again."""
@@ -21,7 +21,6 @@ def test_forest_cabin_path_other():
         patch("src.actions.knock_knock.garden_picking", return_value="GAME OVER."):
         result = forest_cabin()
     assert result == "GAME OVER."
-
 
 
 def test_cabin_knock(monkeypatch):
@@ -95,14 +94,14 @@ def test_no_answer_2():
         result = no_answer()
     assert result == "YOU WIN!"
 
-'''
+
 def test_no_answewr_path_other():
     """Asks the user for a choice when noone answers door - path not 1 or 2"""
     with patch("builtins.input", side_effect=["4", "2", "2", "2"]):
         result = no_answer()
     assert result == "YOU WIN!"
 
-'''
+
 def test_go_into_cabin():
     """returns print statements from entering the cabin"""
     with StringIO() as captured_output:
@@ -120,4 +119,3 @@ def test_go_into_cabin():
 def test_go_into_cabin_return_statement():
     result = go_into_cabin()
     assert result == "YOU WIN!"
-'''
