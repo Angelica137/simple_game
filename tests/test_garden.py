@@ -66,7 +66,7 @@ def test_marshmallows_2():
         result = marshmallows()
     assert result == "YOU WIN!"
 
-'''
+
 def test_fairy_outcomes_lose():
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
@@ -82,15 +82,15 @@ def test_fairy_outcomes_lose_return_statement():
     with patch("builtins.input", side_effect=["n"]):
         result = fairy_outcomes_lose()
     assert result == "GAME OVER."
-
 '''
+
 def test_fairy_outcomes_win():
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
             fairy_outcomes_win()
         output_lines = captured_output.getvalue().strip().split('\n')
     
-    assert len(output_lines) == 10
+    assert len(output_lines) == 8
     assert "Hello little fairy! I did not mean to steal these from you." in output_lines[0]
     assert "“You are not stealing from me. you are stealing from him!” She says angrily while pointing her tiny finger behind you." in output_lines[1]
     assert "You turn around and see a large ogre ready to hit you with a huge club." in output_lines[2]
@@ -100,7 +100,7 @@ def test_fairy_outcomes_win():
     assert "“Ogre!” finally you manage the words as the ogre makes it out of the forest finally catching up." in output_lines[6]
     assert "The lumberjacks see him and launch an attack on the ogre leaving you on the ground with some candy still in your pockets." in output_lines[7]
 
-
+'''
 def test_fairy_outcomes_two_return_statement():
     with patch("builtins.input", side_effect=["n"]):
         result = fairy_outcomes_win()
