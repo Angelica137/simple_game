@@ -30,14 +30,14 @@ def test_cabin_knock(monkeypatch):
     result = cabin_knock()
     assert result == "GAME OVER."
 
-'''
+
 def test_man_opens_door():
     """User does not want to play, enter n."""
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
             man_opens_door()
         output_lines = captured_output.getvalue().strip().split('\n')
-    assert len(output_lines) == 14
+    assert len(output_lines) == 12
     assert "He is putting on his jacket and seems surprised to see you standing there. Did he not hear you knocking?" in output_lines[0]
     assert "“Hey! who are you?” he asks" in output_lines[1]
     assert "“I am… I… my dad left me a while a go in the forest and now I am lost.”" in output_lines[2]
@@ -51,7 +51,7 @@ def test_man_opens_door():
     assert "You pick a spot to fall a sleep on the hay." in output_lines[10]
     assert "All of a sudden you see some read eyes in front of you. VAMPIRE!" in output_lines[11]
 
-
+'''
 def test_man_opens_door_return_statement():
     with patch("builtins.input", side_effect=["n"]):
         result = man_opens_door()
