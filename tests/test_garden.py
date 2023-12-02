@@ -22,7 +22,7 @@ def test_garden_picking_path_1():
     assert "What do you do?" in output_lines[6]
     assert "You shrug and keep on eating. She is so tiny, and you are so hungry." in output_lines[7]
     assert "“No wait!” you hear the little fairy scream, and then, it all goes black. You are dead :(" in output_lines[8]
-'''
+
 
 def test_garden_picking_path_2():
     """Tests using choosing to talk to the fairy -> does NOT want to play.
@@ -41,10 +41,11 @@ def test_garden_picking_path_2():
 
 '''
 def test_garden_picking_return_statement():
-    result = garden_picking()
-    assert result == marshmallows()
+    with patch("builtins.input", side_effect=["2", "2"]):
+        result = garden_picking()
+    assert result == "YOU WIN!"
 
-
+'''
 def test_garden_picking_input():
     """test user input from garden picking choices"""
     with patch("builtins.input", side_effect=["1"]):
