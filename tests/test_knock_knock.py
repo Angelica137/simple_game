@@ -14,17 +14,18 @@ def test_forest_cabin():
     assert result == "GAME OVER."
 
 
+def test_forest_cabin_path_other():
+    """Asks the user for a choice at the cabin - path not 1 or 2"""
+    with patch("builtins.input", side_effect=["4", "2"]), \
+        patch("src.actions.knock_knock.cabin_knock"), \
+        patch("src.actions.knock_knock.garden_picking", return_value="GAME OVER."):
+
+        result = forest_cabin()
+
+    assert result == "GAME OVER."
 
 
 '''
-def test_forest_cabin_path_other():
-    """Asks the user for a choice at the cabin - path not 1 or 2"""
-    with patch("src.part_one.first_action", side_effect=["4", "2"]):
-        result = forest_cabin()
-    assert result == garden_picking()
-
-
-
 def test_cabin_knock(monkeypatch):
     """Retunrs a value from the list - outcome lose, choose no"""
     monkeypatch.setattr(random, 'choice', lambda seq: seq[0])
