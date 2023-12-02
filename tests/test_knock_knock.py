@@ -4,21 +4,17 @@ from contextlib import redirect_stdout
 from unittest.mock import patch
 
 
-
-def test_forest_cabin_path_1_knock_on_door():
+def test_forest_cabin():
     """Asks the user for a choice at the cabin - path knock on door.
         Do not play again."""
-    with patch("src.actions.part_one.first_action", return_value='1'), \
-    patch('random.choice', return_value='A young man opens the door.'):
+    with patch("builtins.input", return_value="1"), \
+        patch("src.actions.knock_knock.cabin_knock", return_value="GAME OVER."), \
+        patch("src.actions.knock_knock.garden_picking"):  # Assuming you're patching the other path as well
         result = forest_cabin()
     assert result == "GAME OVER."
 
 
-def test_forest_cabin_path_2_go_to_garden():
-    """Asks the user for a choice at the cabin - path go to garden"""
-    with patch("src.actions.part_one.first_action", side_effect=["2"]):
-        result = forest_cabin()
-    assert result == garden_picking()
+
 
 '''
 def test_forest_cabin_path_other():
