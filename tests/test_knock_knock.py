@@ -16,7 +16,7 @@ def test_forest_cabin_path_1_knock_on_door():
 
 def test_forest_cabin_path_2_go_to_garden():
     """Asks the user for a choice at the cabin - path go to garden"""
-    with patch("src.actions.part_one.forest_cabin", side_effect=["2"]):
+    with patch("src.actions.part_one.first_action", side_effect=["2"]):
         result = forest_cabin()
     assert result == garden_picking()
 
