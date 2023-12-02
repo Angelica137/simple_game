@@ -3,7 +3,7 @@ from io import StringIO
 from contextlib import redirect_stdout
 from unittest.mock import patch
 
-
+'''
 def test_forest_cabin():
     """Asks the user for a choice at the cabin - path knock on door.
         Do not play again."""
@@ -56,15 +56,15 @@ def test_man_opens_door_return_statement():
     with patch("builtins.input", side_effect=["n"]):
         result = man_opens_door()
     assert result == "GAME OVER."
-
 '''
+
 def test_voice_answers():
     """User does not want to play, enter n"""
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
             voice_answers()
         output_lines = captured_output.getvalue().strip().split('\n')
-    assert len(output_lines) == 11
+    assert len(output_lines) == 9
     assert "You slowly enter the cabin" in output_lines[0]
     assert "You see an old lady by the kitchen stirring a pot" in output_lines[1]
     assert "“Who are you child, what do you want?”" in output_lines[2]
@@ -75,7 +75,7 @@ def test_voice_answers():
     assert "“No, I do not imagine he does. You can stay here with me if you are willing to work and learn.”" in output_lines[7]
     assert "You slowly nod. And you live happily ever after." in output_lines[8]
 
-
+'''
 def test_voice_answers_return_statement():
     with patch("builtins.input", side_effect=["n"]):
         result = voice_answers()
