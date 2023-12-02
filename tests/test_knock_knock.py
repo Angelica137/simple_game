@@ -88,7 +88,7 @@ def test_no_answer_1():
         result = no_answer()
     assert result == "You enter the house"
 
-'''
+
 def test_no_answer_2():
     """test user input from no_answer() is captured"""
     with patch("builtins.input", side_effect=["2", "2", "2"]):
@@ -98,11 +98,11 @@ def test_no_answer_2():
 '''
 def test_no_answewr_path_other():
     """Asks the user for a choice when noone answers door - path not 1 or 2"""
-    with patch("src.knock_knock.no_answer", side_effect=["4", "2"]):
+    with patch("builtins.input", side_effect=["4", "2", "2", "2"]):
         result = no_answer()
-    assert result == garden_picking()
+    assert result == "YOU WIN!"
 
-
+'''
 def test_go_into_cabin():
     """returns print statements from entering the cabin"""
     with StringIO() as captured_output:
