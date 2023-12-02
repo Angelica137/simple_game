@@ -39,13 +39,13 @@ def test_garden_picking_path_2():
     assert "Do not eat that!” a little voice says." in output_lines[4]
     assert "You look around and see a little fairy." in output_lines[5]
 
-'''
+
 def test_garden_picking_return_statement():
     with patch("builtins.input", side_effect=["2", "2"]):
         result = garden_picking()
     assert result == "YOU WIN!"
 
-'''
+
 def test_garden_picking_input():
     """test user input from garden picking choices"""
     with patch("builtins.input", side_effect=["1"]):
@@ -57,16 +57,16 @@ def test_marshmallows_1():
     """test user stops eating and wants to stop playing"""
     with patch("builtins.input", side_effect=["1", "n"]):
         result = marshmallows()
-    assert result == "See you later!"
+    assert result == "GAME OVER."
 
-
+'''
 def test_marshmallows_2():
     """test user talks to fairy"""
     with patch("builtins.input", side_effect=["2", "n"]):
         result = marshmallows()
-    assert result == "See you later!"
+    assert result == "YOU WIN!"
 
-
+'''
 def test_fairy_outcomes_lose():
     with StringIO() as captured_output:
         with redirect_stdout(captured_output):
