@@ -19,20 +19,18 @@ def test_forest_cabin_path_other():
     with patch("builtins.input", side_effect=["4", "2"]), \
         patch("src.actions.knock_knock.cabin_knock"), \
         patch("src.actions.knock_knock.garden_picking", return_value="GAME OVER."):
-
         result = forest_cabin()
-
     assert result == "GAME OVER."
 
 
-'''
+
 def test_cabin_knock(monkeypatch):
     """Retunrs a value from the list - outcome lose, choose no"""
     monkeypatch.setattr(random, 'choice', lambda seq: seq[0])
     result = cabin_knock()
-    assert result == "See you later!"
+    assert result == "GAME OVER."
 
-
+'''
 def test_man_opens_door():
     """User does not want to play, enter n."""
     with StringIO() as captured_output:
