@@ -1,7 +1,7 @@
 from .mechanics import *
 from .part_one import *
 from .garden import garden_picking
-from .end_game import *
+from .play_game import *
 import random
 
 

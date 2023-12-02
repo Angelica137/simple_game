@@ -1,7 +1,7 @@
 from actions import *
 #from actions.part_one import *
 #from actions.garden import *
-from actions.end_game import *
+from actions.play_game import *
 
 
 def main():
