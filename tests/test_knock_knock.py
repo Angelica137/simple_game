@@ -51,13 +51,13 @@ def test_man_opens_door():
     assert "You pick a spot to fall a sleep on the hay." in output_lines[10]
     assert "All of a sudden you see some read eyes in front of you. VAMPIRE!" in output_lines[11]
 
-'''
+
 def test_man_opens_door_return_statement():
     with patch("builtins.input", side_effect=["n"]):
         result = man_opens_door()
-    assert result == "See you later!"
+    assert result == "GAME OVER."
 
-
+'''
 def test_voice_answers():
     """User does not want to play, enter n"""
     with StringIO() as captured_output:
