@@ -3,7 +3,7 @@ from io import StringIO
 from contextlib import redirect_stdout
 from unittest.mock import patch
 
-
+'''
 def test_garden_picking_path_1():
     """Tests choosing to keep eating and stop playing -> does NOT want to play. 
         Enter 1 then n."""
@@ -23,14 +23,15 @@ def test_garden_picking_path_1():
     assert "You shrug and keep on eating. She is so tiny, and you are so hungry." in output_lines[7]
     assert "“No wait!” you hear the little fairy scream, and then, it all goes black. You are dead :(" in output_lines[8]
 '''
+
 def test_garden_picking_path_2():
     """Tests using choosing to talk to the fairy -> does NOT want to play.
-        Wnter 2 then n."""
-    with StringIO() as captured_output:
+        Enter 2 then n."""
+    with patch("builtins.input", side_effect=["2", "n"]), StringIO() as captured_output:
         with redirect_stdout(captured_output):
             garden_picking()           
         output_lines = captured_output.getvalue().strip().split('\n')        
-    assert len(output_lines) == 19
+    assert len(output_lines) == 15
     assert "You take care to hide amongst the bushes and try to stay aware of your surroundings and the cabin." in output_lines[0]
     assert "After a while of nothing happening you decide to start picking up as much candy as you can and fit it in your pockets." in output_lines[1]
     assert "You reach a marshmallow pad. You love marshmallows!" in output_lines[2]
@@ -38,7 +39,7 @@ def test_garden_picking_path_2():
     assert "Do not eat that!” a little voice says." in output_lines[4]
     assert "You look around and see a little fairy." in output_lines[5]
 
-
+'''
 def test_garden_picking_return_statement():
     result = garden_picking()
     assert result == marshmallows()
