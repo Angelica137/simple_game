@@ -3,7 +3,7 @@ from io import StringIO
 from contextlib import redirect_stdout
 from unittest.mock import patch
 
-'''
+
 def test_garden_picking_path_1():
     """Tests choosing to keep eating and stop playing -> does NOT want to play. 
         Enter 1 then n."""
@@ -100,7 +100,7 @@ def test_fairy_outcomes_win():
     assert "“Ogre!” finally you manage the words as the ogre makes it out of the forest finally catching up." in output_lines[6]
     assert "The lumberjacks see him and launch an attack on the ogre leaving you on the ground with some candy still in your pockets." in output_lines[7]
 
-'''
+
 def test_fairy_outcomes_two_return_statement():
     with patch("builtins.input", side_effect=["n"]):
         result = fairy_outcomes_win()
