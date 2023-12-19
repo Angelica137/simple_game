@@ -24,4 +24,4 @@ def first_action() -> str:
 def first_choices() -> str:
     """Collects user input from first action"""
     return input("Enter 1 to knock on the door.\nEnter 2 to pick whatever you \
-                  can grab.\n")
+can grab.\n")
