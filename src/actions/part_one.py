@@ -9,9 +9,9 @@ def intro() -> str:
 
 first_act = [
     "You are in the middle of an enchanted forest where your parents left you \
-    with some bread.",
+with some bread.",
     "After walking for a while you come across a cabin made of ginger bread \
-    and candy.",
+and candy.",
     "You are suspicious, but you are also tired and hungry."
 ]
 
