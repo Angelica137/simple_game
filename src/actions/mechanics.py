@@ -17,5 +17,3 @@ def story_telling(story: list, outcome: str) -> str:
         pause()
         print(line)
     return scene_outcomes.get(outcome)
-
-
