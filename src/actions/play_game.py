@@ -6,4 +6,3 @@ def play_game():
     print(intro())
     print(first_action())
     print(forest_cabin())
-
