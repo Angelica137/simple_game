@@ -61,9 +61,9 @@ fairy = [
     "“Ogre!” finally you manage the words as the ogre makes it out of the\
     forest finally catching up.",
     "The lumberjacks see him and launch an attack on the ogre leaving you on\
-              the ground with some candy still in your pockets."
+    the ground with some candy still in your pockets."
 ]
 
 
 def fairy_outcomes_win() -> str:
-    return(story_telling(fairy, "win"))
+    return (story_telling(fairy, "win"))
