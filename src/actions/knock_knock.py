@@ -68,10 +68,10 @@ voice = [
     "You explain your dad left you in the forest and never came back for you.",
     "She looks at you and asks for your dads name.",
     "“I know old Jack. Sit, you should have something to eat. We will go look \
-    for your dad after you eat”",
+for your dad after you eat”",
     "“I do not think my dad wants me back”. You say while having some soup.",
     "“No, I do not imagine he does. You can stay here with me if you are \
-    willing to work and learn.”",
+willing to work and learn.”",
     "You slowly nod. And you live happily ever after."
 ]
 
@@ -83,7 +83,7 @@ def voice_answers():
 def no_answer():
     while True:
         path = input("Enter 1 to enter the house.\nEnter 2 to go to the \
-                      garden.\n")
+garden.\n")
         if path == "1":
             return "You enter the house"
         if path == "2":
@@ -94,10 +94,10 @@ go_inside_story = [
         "You go into the house and see the cabin is empty.",
         "The oven apears to be on.",
         "You move towards it slowly and grab some bread for the table and \
-        mindlessly start eating it.",
+mindlessly start eating it.",
         "You slowly approach the oven to see what is cooking.",
         "You hear some noise from behind you and before you know it… someone \
-        shoved you into the oven!"
+shoved you into the oven!"
     ]
 
 
