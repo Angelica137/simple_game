@@ -88,7 +88,7 @@ def test_fairy_outcomes_lose():
         output_lines = captured_output.getvalue().strip().split('\n')
     assert len(output_lines) == 2
     assert "You shrug and keep on eating. She is so tiny, and you are \
-            so hungry." in output_lines[0]
+so hungry." in output_lines[0]
     assert "“No wait!” you hear the little fairy scream, and then, it \
 all goes black. You are dead :(" in output_lines[1]
 

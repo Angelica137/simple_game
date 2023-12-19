@@ -8,7 +8,7 @@ surroundings and the cabin.",
 much candy as you can and fit it in your pockets.",
     "You reach a marshmallow pad. You love marshmallows!",
     "You decide to have some right there and then, after all, your pockets \
-    are getting full and heavy and you need to keep your sugar levels up.",
+are getting full and heavy and you need to keep your sugar levels up.",
     "“Do not eat that!” a little voice says.",
     "You look around and see a little fairy.",
 ]
@@ -58,9 +58,9 @@ pockets full of candy and run for your life!",
 forest. There are some lumberjacks about to go in and you fall to your \
 knees and try to tell them there is an ogre, but you are making no sense.",
     "You turn around nervously pointing at the forest.",
-    "“Ogre!” finally you manage the words as the ogre makes it out of the\
+    "“Ogre!” finally you manage the words as the ogre makes it out of the \
 forest finally catching up.",
-    "The lumberjacks see him and launch an attack on the ogre leaving you on\
+    "The lumberjacks see him and launch an attack on the ogre leaving you on \
 the ground with some candy still in your pockets."
 ]
 
