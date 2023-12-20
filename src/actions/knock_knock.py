@@ -49,11 +49,11 @@ a vampire for all I know. If you want water the well is over there. If \
 you want to sleep you can sleep with the sheep but you better not kill \
 them!”",
     "He hands you a handkerchief and moves past you.",
-    "“And do steal any of the candy either!”",
+    "“And do not steal any of the candy either!”",
     "You make your way to the well, and get some water and then move towards \
 the ship pen.",
     "You pick a spot to fall a sleep on the hay.",
-    "All of a sudden you see some read eyes in front of you. VAMPIRE!",
+    "All of a sudden you see some red eyes in front of you. VAMPIRE!",
 ]
 
 

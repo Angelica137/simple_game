@@ -55,11 +55,11 @@ could be a vampire for all I know. If you want water the well is over there. \
 If you want to sleep you can sleep with the sheep but you better not kill \
 them!”" in output_lines[6]
     assert "He hands you a handkerchief and moves past you." in output_lines[7]
-    assert "“And do steal any of the candy either!”" in output_lines[8]
+    assert "“And do not steal any of the candy either!”" in output_lines[8]
     assert "You make your way to the well, and get some water and then move \
 towards the ship pen." in output_lines[9]
     assert "You pick a spot to fall a sleep on the hay." in output_lines[10]
-    assert "All of a sudden you see some read eyes in front of you. VAMPIRE!" \
+    assert "All of a sudden you see some red eyes in front of you. VAMPIRE!" \
         in output_lines[11]
 
 
