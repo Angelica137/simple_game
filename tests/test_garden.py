@@ -2,6 +2,7 @@ from src.actions.garden import *
 from io import StringIO
 from contextlib import redirect_stdout
 from unittest.mock import patch
+import pytest
 
 
 def test_garden_picking_path_1():
@@ -131,3 +132,39 @@ def test_fairy_outcomes_two_return_statement():
     with patch("builtins.input", side_effect=["n"]):
         result = fairy_outcomes_win()
     assert result == "YOU WIN!"
+
+
+class InvalidChoiceError(Exception):
+    pass
+
+
+def test_invalid_choice(capsys, monkeypatch):
+    """Tests input validation return statement"""
+    # Mock the input function to return '3'
+    monkeypatch.setattr('builtins.input', lambda _: '3')
+
+    # Monkeypatch the first_choices function to raise InvalidChoiceError after
+    # one iteration
+    with monkeypatch.context() as m:
+        count = 0
+
+        def custom_first_choices(prompt="Enter your choice: ", sentinel=None):
+            nonlocal count
+            count += 1
+            if count > 1:
+                raise InvalidChoiceError("Invalid choice")
+            return '3'
+
+        m.setattr('src.actions.garden.first_choices',
+                  custom_first_choices)
+
+        # Call marshmallows
+        with pytest.raises(InvalidChoiceError, match="Invalid choice"):
+            marshmallows()
+
+    # Capture the printed output
+    captured_output = capsys.readouterr()
+
+    # Check the expected output
+    expected_output = "Oops! 3 is not an option.\n"
+    assert captured_output.out == expected_output

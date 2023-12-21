@@ -45,6 +45,8 @@ def marshmallows() -> str:
             return fairy_outcomes_lose()
         if path == "2":
             return fairy_outcomes_win()
+        else:
+            print(f'Oops! {path} is not an option.')
 
 
 fairy = [

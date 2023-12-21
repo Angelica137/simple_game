@@ -1,7 +1,7 @@
 from src.actions.knock_knock import *
 from io import StringIO
 from contextlib import redirect_stdout
-from unittest.mock import patch, Mock
+from unittest.mock import patch
 import pytest
 
 
