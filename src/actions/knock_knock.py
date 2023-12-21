@@ -13,6 +13,8 @@ def forest_cabin() -> str:
             return cabin_knock()
         if path == '2':
             return garden_picking()
+        else:
+            print(f'Oops! {path} is not an option.')
 
 
 knock_outcomes = [
