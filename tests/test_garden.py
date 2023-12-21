@@ -148,7 +148,8 @@ def test_invalid_choice(capsys, monkeypatch):
     with monkeypatch.context() as m:
         count = 0
 
-        def custom_garden_picking_input(prompt="Enter your choice: ", sentinel=None):
+        def custom_garden_picking_input(prompt="Enter your choice: ",
+                                        sentinel=None):
             nonlocal count
             count += 1
             if count > 1:
