@@ -148,12 +148,14 @@ def test_go_into_cabin_return_statement():
 class InvalidChoiceError(Exception):
     pass
 
+
 def test_invalid_choice(capsys, monkeypatch):
     """Tests input validation return statement"""
     # Mock the input function to return '3'
     monkeypatch.setattr('builtins.input', lambda _: '3')
 
-    # Monkeypatch the first_choices function to raise InvalidChoiceError after one iteration
+    # Monkeypatch the first_choices function to raise InvalidChoiceError after
+    # one iteration
     with monkeypatch.context() as m:
         count = 0
 
@@ -164,7 +166,8 @@ def test_invalid_choice(capsys, monkeypatch):
                 raise InvalidChoiceError("Invalid choice")
             return '3'
 
-        m.setattr('src.actions.knock_knock.first_choices', custom_first_choices)
+        m.setattr('src.actions.knock_knock.first_choices',
+                  custom_first_choices)
 
         # Call forest_cabin
         with pytest.raises(InvalidChoiceError, match="Invalid choice"):
