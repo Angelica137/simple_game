@@ -148,15 +148,15 @@ def test_invalid_choice(capsys, monkeypatch):
     with monkeypatch.context() as m:
         count = 0
 
-        def custom_first_choices(prompt="Enter your choice: ", sentinel=None):
+        def custom_garden_picking_input(prompt="Enter your choice: ", sentinel=None):
             nonlocal count
             count += 1
             if count > 1:
                 raise InvalidChoiceError("Invalid choice")
             return '3'
 
-        m.setattr('src.actions.garden.first_choices',
-                  custom_first_choices)
+        m.setattr('src.actions.garden.garden_picking_input',
+                  custom_garden_picking_input)
 
         # Call marshmallows
         with pytest.raises(InvalidChoiceError, match="Invalid choice"):
