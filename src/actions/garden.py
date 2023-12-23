@@ -33,30 +33,19 @@ def fairy_outcomes_lose() -> str:
 
 def marshmallows() -> str:
     """Outcomes from action choices at the garden"""
-    options = ["Enter 1 to shrug and keep on eating the marshmallows.\nEnter\
-2 to start talking to the fairy.\n", fairy_outcomes_lose(), fairy_outcomes_win()]
+    options = {"1": fairy_outcomes_lose,
+              "2": fairy_outcomes_win,
+              "prompt": "Enter 1 to shrug and keep on eating the marshmallows.\nEnter \
+2 to start talking to the fairy.\n"}
     while True:
-        path = input(options[0])
+        path = input(options["prompt"])
         if path == "1":
-            return options[1]
+            return options["1"]()
         if path == "2":
-            return options[2]
+            return options["2"]()
         else:
             print(f'Oops! {path} is not an option.')
 
-'''
-def marshmallows() -> str:
-    """Outcomes from action choices at the garden"""
-    while True:
-        path = input("Enter 1 to shrug and keep on eating the marshmallows.\nEnter\
-2 to start talking to the fairy.\n")
-        if path == "1":
-            return fairy_outcomes_lose()
-        if path == "2":
-            return fairy_outcomes_win()
-        else:
-            print(f'Oops! {path} is not an option.')
-'''
 
 fairy = [
     "Hello little fairy! I did not mean to steal these from you.",
