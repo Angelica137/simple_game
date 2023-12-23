@@ -17,3 +17,13 @@ def story_telling(story: list, outcome: str) -> str:
         pause()
         print(line)
     return scene_outcomes.get(outcome)
+
+
+def choices(options: dict) -> str:
+    """gives the user an option and moves on the game"""
+    while True:
+        path = input(options["prompt"])
+        if path in options:
+            return options[path]()
+        else:
+            print(f'Oops! {path} is not an option.')

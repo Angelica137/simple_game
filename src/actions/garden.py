@@ -31,16 +31,6 @@ def fairy_outcomes_lose() -> str:
     return (story_telling(keep_eating, "lose"))
 
 
-def choices(options: dict) -> str:
-    """gives the user an option and moves on the game"""
-    while True:
-        path = input(options["prompt"])
-        if path in options:
-            return options[path]()
-        else:
-            print(f'Oops! {path} is not an option.')
-
-
 def marshmallows() -> str:
     """Outcomes from action choices at the garden"""
     options = {"1": fairy_outcomes_lose,
