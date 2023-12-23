@@ -35,10 +35,8 @@ def choices(options: dict) -> str:
     """gives the user an option and moves on the game"""
     while True:
         path = input(options["prompt"])
-        if path == "1":
-            return options["1"]()
-        if path == "2":
-            return options["2"]()
+        if path in options:
+            return options[path]()
         else:
             print(f'Oops! {path} is not an option.')
 
