@@ -90,6 +90,8 @@ garden.\n")
             return "You enter the house"
         if path == "2":
             return garden_picking()
+        else:
+            print(f'Oops! {path} is not an option.')
 
 
 go_inside_story = [
