@@ -25,9 +25,9 @@ def test_story_telling():
 
 def test_choices():
     """tests the user is given choices and moves the game"""
-    mock_options = {"prompt": "enter 1 or 2", 
+    mock_options = {"prompt": "enter 1 or 2",
                     "1": lambda: "1 is valid",
                     "2": lambda: "is valid too"}
     with patch("builtins.input", side_effect=["1"]):
-        result = choices(mock_options) 
+        result = choices(mock_options)
     assert result == "1 is valid"
