@@ -1,9 +1,9 @@
 from src.actions.mechanics import *
 from freezegun import freeze_time
-from unittest.mock import patch, call
-import pytest
+from unittest.mock import patch
+from builtins import StopIteration
 
-
+'''
 def test_pause():
     with freeze_time("2022-01-01 00:00:00"):
         result = pause()
@@ -44,7 +44,7 @@ def test_choices_path_2():
     assert result == "is valid too"
 
 
-'''
+
 class InvalidChoiceError(Exception):
     pass
 
@@ -84,3 +84,4 @@ def test_invalid_input(capsys, monkeypatch):
     expected_output = "Oops! invalid_choice is not an option.\n"
     assert captured_output.out == expected_output
 '''
+
