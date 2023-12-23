@@ -61,13 +61,6 @@ def test_garden_picking_return_statement():
     assert result == "YOU WIN!"
 
 
-def test_garden_picking_input():
-    """test user input from garden picking choices"""
-    with patch("builtins.input", side_effect=["1"]):
-        result = garden_picking_input()
-    assert result == "1"
-
-
 def test_marshmallows_1():
     """test user stops eating and wants to stop playing"""
     with patch("builtins.input", side_effect=["1", "n"]):

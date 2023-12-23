@@ -20,12 +20,6 @@ def garden_picking() -> str:
     return marshmallows()
 
 
-def garden_picking_input():
-    """Gives the user choices for the garden action"""
-    return input("Enter 1 to shrug and keep on eating the marshmallows.\nEnter\
-2 to start talking to the fairy.\n")
-
-
 keep_eating = [
         "You shrug and keep on eating. She is so tiny, and you are so hungry.",
         "“No wait!” you hear the little fairy scream, and then, it all goes \
@@ -40,7 +34,8 @@ def fairy_outcomes_lose() -> str:
 def marshmallows() -> str:
     """Outcomes from action choices at the garden"""
     while True:
-        path = garden_picking_input()
+        path = input("Enter 1 to shrug and keep on eating the marshmallows.\nEnter\
+2 to start talking to the fairy.\n")
         if path == "1":
             return fairy_outcomes_lose()
         if path == "2":
