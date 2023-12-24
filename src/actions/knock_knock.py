@@ -7,14 +7,11 @@ import random
 
 def forest_cabin() -> str:
     """Collects user input from first action and moves on to next action"""
-    while True:
-        path = first_choices()
-        if path == '1':
-            return cabin_knock()
-        if path == '2':
-            return garden_picking()
-        else:
-            print(f'Oops! {path} is not an option.')
+    options = {"1": cabin_knock, 
+               "2": garden_picking, 
+               "prompt": "Enter 1 to knock on the door.\nEnter 2 to pick \
+whatever you can grab.\n"}
+    return (choices(options))
 
 
 knock_outcomes = [
