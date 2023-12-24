@@ -19,9 +19,3 @@ and candy.",
 def first_action() -> str:
     """Print first action using story_telling()"""
     return story_telling(first_act, "continue")
-
-
-def first_choices() -> str:
-    """Collects user input from first action"""
-    return input("Enter 1 to knock on the door.\nEnter 2 to pick whatever you \
-can grab.\n")
