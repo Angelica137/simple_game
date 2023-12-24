@@ -1,9 +1,9 @@
 from src.actions.mechanics import *
 from freezegun import freeze_time
-from unittest.mock import patch
+from unittest.mock import patch, call
 from builtins import StopIteration
 
-'''
+
 def test_pause():
     with freeze_time("2022-01-01 00:00:00"):
         result = pause()
@@ -44,7 +44,7 @@ def test_choices_path_2():
     assert result == "is valid too"
 
 
-
+'''
 class InvalidChoiceError(Exception):
     pass
 

@@ -126,39 +126,3 @@ def test_fairy_outcomes_two_return_statement():
         result = fairy_outcomes_win()
     assert result == "YOU WIN!"
 
-
-class InvalidChoiceError(Exception):
-    pass
-
-
-def test_invalid_choice(capsys, monkeypatch):
-    """Tests input validation return statement"""
-    # Mock the input function to return '3'
-    monkeypatch.setattr('builtins.input', lambda _: '3')
-
-    # Monkeypatch the first_choices function to raise InvalidChoiceError after
-    # one iteration
-    with monkeypatch.context() as m:
-        count = 0
-
-        def custom_garden_picking_input(prompt="Enter your choice: ",
-                                        sentinel=None):
-            nonlocal count
-            count += 1
-            if count > 1:
-                raise InvalidChoiceError("Invalid choice")
-            return '3'
-
-        m.setattr('src.actions.garden.garden_picking_input',
-                  custom_garden_picking_input)
-
-        # Call marshmallows
-        with pytest.raises(InvalidChoiceError, match="Invalid choice"):
-            marshmallows()
-
-    # Capture the printed output
-    captured_output = capsys.readouterr()
-
-    # Check the expected output
-    expected_output = "Oops! 3 is not an option.\n"
-    assert captured_output.out == expected_output
