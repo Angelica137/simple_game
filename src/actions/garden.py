@@ -36,7 +36,7 @@ def marshmallows() -> str:
     options = {"1": fairy_outcomes_lose,
                "2": fairy_outcomes_win,
                "prompt": "Enter 1 to shrug and keep on eating the \
-                marshmallows.\nEnter 2 to start talking to the fairy.\n"}
+marshmallows.\nEnter 2 to start talking to the fairy.\n"}
     return (choices(options))
 
 
