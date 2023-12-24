@@ -7,8 +7,8 @@ import random
 
 def forest_cabin() -> str:
     """Collects user input from first action and moves on to next action"""
-    options = {"1": cabin_knock, 
-               "2": garden_picking, 
+    options = {"1": cabin_knock,
+               "2": garden_picking,
                "prompt": "Enter 1 to knock on the door.\nEnter 2 to pick \
 whatever you can grab.\n"}
     return (choices(options))
