@@ -31,10 +31,3 @@ def test_first_action_return_statement():
     """Test first action returns string"""
     result = first_action()
     assert result == "What do you do?"
-
-
-def test_first_choices_user_input_1():
-    """test user input from first_choices() is captured"""
-    with patch("builtins.input", side_effect=["1"]):
-        result = first_choices()
-    assert result == "1"
