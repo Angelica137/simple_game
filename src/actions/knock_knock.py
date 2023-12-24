@@ -81,11 +81,10 @@ def voice_answers():
 
 def no_answer():
     options = {
-        "1": lambda: "You enter the house", 
-        "2": garden_picking, 
+        "1": lambda: "You enter the house",
+        "2": garden_picking,
         "prompt": "Enter 1 to enter the house.\nEnter 2 to go to the \
-garden.\n"
-		}
+garden.\n"}
     return (choices(options))
 
 
