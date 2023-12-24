@@ -80,15 +80,13 @@ def voice_answers():
 
 
 def no_answer():
-    while True:
-        path = input("Enter 1 to enter the house.\nEnter 2 to go to the \
-garden.\n")
-        if path == "1":
-            return "You enter the house"
-        if path == "2":
-            return garden_picking()
-        else:
-            print(f'Oops! {path} is not an option.')
+    options = {
+        "1": lambda: "You enter the house", 
+        "2": garden_picking, 
+        "prompt": "Enter 1 to enter the house.\nEnter 2 to go to the \
+garden.\n"
+		}
+    return (choices(options))
 
 
 go_inside_story = [
