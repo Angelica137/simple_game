@@ -7,12 +7,11 @@ def main():
     while play_again:
         game = play_game()
         options = {
-        "prompt": "Do you want to play again? y/n\n",
-        "y": lambda: "y",
-        "n": lambda: "See you later!"
-		}
+                  "prompt": "Do you want to play again? y/n\n",
+                  "y": lambda: "y",
+                  "n": lambda: "See you later!"
+                  }
         path = (choices(options))
-        #print(path)
         if path == "See you later!":
             print(path)
             break
